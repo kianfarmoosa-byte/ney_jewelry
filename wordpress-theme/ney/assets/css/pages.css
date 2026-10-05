@@ -1,0 +1,24 @@
+/* Regular pages (payment, thank-you, my account, legal…) */
+html:has(body.ney-page),body.ney-page{height:auto;overflow:auto}
+body.ney-page{background:var(--s-bg);color:var(--s-ink);font-family:"Vazirmatn",Tahoma,sans-serif;line-height:1.8}
+body.ney-page a{color:inherit}
+body.ney-page .s-hd{padding-top:env(safe-area-inset-top)}
+.ney-pnav{margin-inline-start:auto;display:flex;gap:4px}
+.ney-pnav a{padding:8px 14px;border-radius:999px;font-size:.9rem;color:var(--s-ink2);text-decoration:none}
+.ney-pnav a:hover{background:var(--s-soft);color:var(--s-ink)}
+.ney-main{padding-block:28px 64px;min-height:60vh}
+.ney-title{font-size:clamp(1.5rem,1.1rem + 1.6vw,2.2rem);font-weight:500;margin-bottom:20px}
+.ney-content{font-size:.95rem}
+.ney-content p{margin-bottom:1em}
+.ney-content table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.9rem}
+.ney-content th,.ney-content td{padding:10px 8px;border-bottom:1px solid var(--s-line);text-align:start}
+.ney-content input[type=text],.ney-content input[type=email],.ney-content input[type=tel],.ney-content input[type=password],.ney-content select,.ney-content textarea{
+  width:100%;min-height:48px;padding:10px 14px;border:1px solid var(--s-line);border-radius:14px;background:var(--s-surf);font:inherit;font-size:16px;color:var(--s-ink)}
+.ney-content .button,.ney-content button[type=submit],.ney-content #place_order{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 28px;border:0;border-radius:999px;
+  background:var(--s-gold)!important;color:var(--s-on)!important;font:inherit;font-weight:500;cursor:pointer;text-decoration:none}
+.ney-content .woocommerce-order-overview,.ney-content .woocommerce-thankyou-order-details{list-style:none;display:grid;gap:8px;padding:16px;border:1px solid var(--s-line);border-radius:18px;background:var(--s-surf);margin:16px 0}
+.ney-content .woocommerce-notice--success,.ney-content .woocommerce-message,.ney-content .woocommerce-info{padding:14px 18px;border-radius:14px;background:color-mix(in srgb,var(--s-ok) 12%,transparent);margin-bottom:16px;list-style:none}
+.ney-content .woocommerce-error{padding:14px 18px;border-radius:14px;background:color-mix(in srgb,var(--s-ruby) 12%,transparent);margin-bottom:16px;list-style:none}
+.ney-content .wc_payment_methods{list-style:none;display:grid;gap:10px;margin:12px 0}
+.ney-content .wc_payment_method{border:1px solid var(--s-line);border-radius:14px;padding:14px;background:var(--s-surf)}
+@media (max-width:760px){.ney-main{padding-block:18px 40px}.ney-content table{font-size:.84rem}}
