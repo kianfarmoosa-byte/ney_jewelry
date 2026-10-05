@@ -1,738 +1,3 @@
-<!doctype html>
-<html lang="fa">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,interactive-widget=resizes-content">
-<meta name="theme-color" content="#fbf8f2" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#15183a" media="(prefers-color-scheme: dark)">
-<meta name="format-detection" content="telephone=no">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="NEY">
-<title>NEY | طلا و جواهر</title>
-<meta name="description" content="NEY — طلا و جواهر دست‌ساز؛ انگشتر، گردنبند، دستبند و گوشواره طلا.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  color-scheme: light;
-  --t: 1300ms;
-  --ease: cubic-bezier(0.65,0,0.35,1);
-  --out: cubic-bezier(0.16,1,0.3,1);
-  --sine: cubic-bezier(0.37,0,0.63,1);
-
-  --c-sky:#f3e8d2; --c-star:#f6ecd4;
-  --c-sun:#d4a239; --c-sunray:#e8c46e; --c-sunin:#ecc361;
-  --c-moon:#eee5ca; --c-crater:#dcd1b0;
-  --c-string:#a08d6c; --c-cloud:#faf3e5;
-  --c-far:#c9d6bb; --c-hill:#9bb89b;
-  --c-wall:#efe3c6; --c-roof:#a8742a; --c-door:#274e52; --c-win:#5f7f5b;
-  --c-fpine:#7b9a74; --c-meadow:#5f7f5b; --c-river:#4f8784; --c-ripple:#f3e8d2;
-  --c-npine:#274e52; --c-ground:#869659; --c-fern:#5f7f5b; --c-stem:#4f6f4b;
-  --c-bellA:#d6a63d; --c-bellB:#9e2b3c;
-  --c-cap:#9e2b3c; --c-mstem:#f1e4c8; --c-spot:#f7eedb;
-  --c-fb:#c4912f; --c-fc:#f6ecd8; --c-fd:#203f43;
-  --c-grassA:#2c5a52; --c-grassB:#1f4246; --c-seed:#e2b54e;
-  --c-la:#d6a63d; --c-lb:#9e2b3c; --c-lc:#b98a3e; --c-vein:#7a5418;
-  --shadow: rgba(38,58,44,.34); --edge: rgba(255,250,236,.55);
-  --tag:#f6eedc; --ink:#3a2c1e; --ink2:#7a6448; --thread:#8a7556;
-  --groove:#e4d7bb; --ring:#e0b65e; --gold:#a8742a; --perf:#cdb995;
-  --grainO:.6;
-  --b-rim:#2a2320; --b-a:#d9a53a; --b-b:#a3283c; --b-sp:#f7ecd2;
-  --j-g1:#d6a63d; --j-g2:#f3d681; --j-g3:#9a6b22; --j-ru:#a82539; --j-ru2:#d4495c;
-  --j-em:#1f7a63; --j-em2:#58b597; --j-di:#eef4f2; --j-di2:#c4d6d3; --j-di3:#ffffff;
-  --j-pe:#f6eedc; --j-pe2:#dccfb3; --j-glint:#fffaf0;
-}
-.night{
-  --c-sky:#1c2145; --c-star:#f1e6c4;
-  --c-moon:#ece4c9; --c-crater:#d0c7a6;
-  --c-string:#6f72a6; --c-cloud:#2a3064;
-  --c-far:#363e74; --c-hill:#2d3467;
-  --c-wall:#4b4f86; --c-roof:#262b58; --c-door:#1a1e40; --c-win:#ffcf72;
-  --c-fpine:#252b5a; --c-meadow:#212650; --c-river:#3b4d8c; --c-ripple:#c9cff2;
-  --c-npine:#171b3e; --c-ground:#262b57; --c-fern:#1b1f47; --c-stem:#1d2149;
-  --c-bellA:#7a68aa; --c-bellB:#5e4e92;
-  --c-cap:#7b5aa0; --c-mstem:#9894c4; --c-spot:#d6d0f2;
-  --c-fb:#b08a3e; --c-fc:#c4bedf; --c-fd:#11143a;
-  --c-grassA:#151a3d; --c-grassB:#0e1231; --c-seed:#4f4880;
-  --c-la:#5d5590; --c-lb:#4b4380; --c-lc:#6a5f99; --c-vein:#2f2a58;
-  --shadow: rgba(6,8,26,.62); --edge: rgba(190,198,255,.2);
-  --tag:#e2dac4; --ink:#262a52; --ink2:#5c5f8c; --thread:#7477ad;
-  --groove:#cbc2ad; --ring:#b9b0d2; --gold:#7d6aa8; --perf:#aaa4c2;
-  --grainO:.42;
-  --b-rim:#14173a; --b-a:#d0a756; --b-b:#8b3a64; --b-sp:#ece3c8;
-  --j-g1:#c9a55e; --j-g2:#eedba0; --j-g3:#7d6233; --j-ru:#93304f; --j-ru2:#c45577;
-  --j-em:#2a6f73; --j-em2:#6ab3ac; --j-di:#e3e5f8; --j-di2:#a9afd9; --j-di3:#ffffff;
-  --j-pe:#e6e0f2; --j-pe2:#b5afd0; --j-glint:#fff6dc;
-}
-
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;overflow:hidden}
-body{
-  background:var(--c-sky);
-  transition: background-color var(--t) var(--ease);
-  font-family:"Vazirmatn", Tahoma, sans-serif;
-  color:var(--ink);
-  -webkit-font-smoothing:antialiased;
-  -webkit-tap-highlight-color:transparent;
-}
-#stage{position:fixed;inset:0;overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none}
-.layer{position:absolute;will-change:transform;pointer-events:none}
-.layer svg{display:block;overflow:visible;transition:filter var(--t) var(--ease) var(--d)}
-.layer path,.layer rect{transition:fill var(--t) var(--ease) var(--d)}
-.layer > svg{animation:rise 1200ms var(--out) both;animation-delay:calc(var(--i) * 75ms + 80ms)}
-.settled .layer > svg{animation:none}
-@keyframes rise{from{opacity:0;transform:translate3d(0,26px,0)}}
-@keyframes fadein{from{opacity:0}}
-
-/* paper fills */
-.sky{fill:var(--c-sky)} .star{fill:var(--c-star)}
-.sun{fill:var(--c-sun)} .sunray{fill:var(--c-sunray)} .sunin{fill:var(--c-sunin)}
-.moon{fill:var(--c-moon)} .crater{fill:var(--c-crater)}
-.string{stroke:var(--c-string);stroke-width:1;fill:none;transition:stroke var(--t) var(--ease) var(--d)}
-.cloud{fill:var(--c-cloud)} .far{fill:var(--c-far)} .hill{fill:var(--c-hill)}
-.wall{fill:var(--c-wall)} .roof{fill:var(--c-roof)} .door{fill:var(--c-door)}
-.win{fill:var(--c-win)}
-.layer .win{transition-delay:calc(var(--d) + var(--w,0ms))}
-.fpine{fill:var(--c-fpine)} .meadow{fill:var(--c-meadow)} .river{fill:var(--c-river)} .ripple{fill:var(--c-ripple)}
-.npine{fill:var(--c-npine)} .ground{fill:var(--c-ground)} .fern{fill:var(--c-fern)} .stem{fill:var(--c-stem)}
-.bellA{fill:var(--c-bellA)} .bellB{fill:var(--c-bellB)}
-.cap{fill:var(--c-cap)} .mstem{fill:var(--c-mstem)} .spot{fill:var(--c-spot)}
-.fb{fill:var(--c-fb)} .fc{fill:var(--c-fc)} .fd{fill:var(--c-fd)}
-.grassA{fill:var(--c-grassA)} .grassB,.sstem{fill:var(--c-grassB)} .seed{fill:var(--c-seed)}
-.la{fill:var(--c-la)} .lb{fill:var(--c-lb)} .lc{fill:var(--c-lc)} .vein{fill:var(--c-vein)}
-.layer .g{fill:url(#grain);opacity:var(--grainO);transition:opacity var(--t) var(--ease) var(--d)}
-
-.stars{opacity:0;transition:opacity 1600ms var(--ease) calc(var(--d) + 500ms)}
-.night .stars{opacity:1}
-.night .star{animation:twinkle 4s var(--sine) infinite alternate}
-@keyframes twinkle{from{opacity:.25}to{opacity:1}}
-
-.glow{opacity:0;transition:opacity 1400ms var(--ease) calc(var(--d) + 700ms + var(--w,0ms))}
-.night .glow{opacity:1}
-
-/* hanging sun & moon */
-.hang-c{position:absolute;top:0;animation:fadein 1400ms var(--out) both 200ms;
-  transition:transform 1800ms var(--ease) calc(var(--d) + 600ms)}
-.hang-c svg{transform-origin:50% 0;animation:swing 7s var(--sine) infinite alternate}
-.sunH{transform:translate3d(0,0,0)}
-.night .sunH{transform:translate3d(0,var(--up),0);transition-delay:var(--d)}
-.moonH{transform:translate3d(0,var(--up),0);transition-delay:var(--d)}
-.night .moonH{transform:translate3d(0,0,0);transition-delay:calc(var(--d) + 600ms)}
-.mglow{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(238,229,202,.30),rgba(238,229,202,0) 68%);pointer-events:none}
-.hit{pointer-events:auto;cursor:pointer}
-@keyframes swing{from{transform:rotate(-1.4deg)}to{transform:rotate(1.4deg)}}
-
-/* butterfly */
-.bfly{position:fixed;left:0;top:0;z-index:26;border:0;background:none;padding:0;cursor:pointer;will-change:transform;
-  touch-action:manipulation;animation:fadein 900ms var(--out) both 900ms;-webkit-tap-highlight-color:transparent}
-.bfly svg{width:100%;height:100%;display:block;overflow:visible;
-  filter:drop-shadow(0 -1px 0 var(--edge)) drop-shadow(2px 7px 5px var(--shadow));transition:filter var(--t) var(--ease)}
-.night .bfly svg{filter:drop-shadow(0 0 7px rgba(255,214,140,.55)) drop-shadow(2px 7px 5px var(--shadow))}
-.bfly:focus-visible{outline:2px dashed var(--c-fc);outline-offset:4px;border-radius:50%}
-.bfly path{transition:fill var(--t) var(--ease)}
-.brim,.bbody{fill:var(--b-rim)} .bwa{fill:var(--b-a)} .bwb{fill:var(--b-b)} .bsp{fill:var(--b-sp)}
-.bant{fill:none;stroke:var(--b-rim);stroke-width:1.1;stroke-linecap:round;transition:stroke var(--t) var(--ease)}
-.bfly .g{fill:url(#grain);opacity:var(--grainO)}
-
-/* hanging jewelry */
-#jewels{position:fixed;inset:0;pointer-events:none;z-index:18}
-.jw{position:absolute;top:0;transform-origin:50% 0;will-change:transform;
-  filter:drop-shadow(0 -1px 0 var(--edge)) drop-shadow(2px 9px 7px var(--shadow));transition:filter var(--t) var(--ease)}
-.jw.open{z-index:3}
-.jw-drop{position:relative;display:flex;flex-direction:column;align-items:center;
-  animation:drop 1600ms var(--out) both;animation-delay:calc(1000ms + var(--di) * 220ms)}
-.jthread{display:block;width:1px;background:var(--thread);transition:background-color var(--t) var(--ease)}
-.jgem{display:block;border:0;background:none;padding:0;cursor:grab;pointer-events:auto;touch-action:none;
-  -webkit-tap-highlight-color:transparent}
-.jgem:active{cursor:grabbing}
-.jgem:focus-visible{outline:2px dashed var(--ink2);outline-offset:4px;border-radius:8px}
-.jgem svg{width:100%;height:100%;display:block;overflow:visible;transform-origin:50% 50%}
-.jw path{fill-rule:evenodd;transition:fill var(--t) var(--ease)}
-.jw .g{fill:url(#grain);opacity:var(--grainO)}
-.jg1{fill:var(--j-g1)} .jg2{fill:var(--j-g2)} .jg3{fill:var(--j-g3)}
-.jru{fill:var(--j-ru)} .jru2{fill:var(--j-ru2)} .jem{fill:var(--j-em)} .jem2{fill:var(--j-em2)}
-.jdi{fill:var(--j-di)} .jdi2{fill:var(--j-di2)} .jdi3{fill:var(--j-di3)}
-.jpe{fill:var(--j-pe)} .jpe2{fill:var(--j-pe2)} .jhi{fill:#fffdf4}
-.jkn{fill:none;stroke:var(--thread);stroke-width:1;transition:stroke var(--t) var(--ease)}
-.jwire3{fill:none;stroke:var(--j-g3);stroke-width:2.8;stroke-linecap:round}
-.jwire1{fill:none;stroke:var(--j-g1);stroke-width:1.5;stroke-linecap:round}
-.glint{fill:var(--j-glint);opacity:0;transform-box:fill-box;transform-origin:center}
-.jw:hover .glint,.jw.shine .glint{animation:glint 1.25s var(--sine) both}
-.jw:hover .glint{animation-iteration-count:infinite}
-.glint.g2{animation-delay:.35s!important}
-@keyframes glint{0%{opacity:0;transform:scale(.2) rotate(0)}40%{opacity:1;transform:scale(1) rotate(45deg)}100%{opacity:0;transform:scale(.3) rotate(90deg)}}
-.jlab{position:absolute;top:100%;left:50%;display:flex;flex-direction:column;align-items:center;
-  transform:translate(calc(-50% + var(--sx,0px)),-8px) scale(.96);transform-origin:50% 0;opacity:0;visibility:hidden;
-  transition:opacity 350ms var(--ease),transform 600ms var(--out),visibility 0s 350ms}
-.jw.open .jlab{opacity:1;visibility:visible;transform:translate(calc(-50% + var(--sx,0px)),0) scale(1);transition-delay:0s}
-.jlab .thread{--len:10px}
-.jlabel{padding:1.75rem 1.05rem .85rem;min-width:8.6rem;text-align:center;color:var(--ink);white-space:nowrap}
-.jlabel b{display:block;font-weight:500;font-size:.86rem}
-.jlabel small{display:block;font-size:.68rem;color:var(--ink2);margin:.2rem 0 .6rem;transition:color var(--t) var(--ease)}
-.jlabel a{pointer-events:auto;font-size:.76rem;color:var(--gold);text-decoration:none;border-bottom:1px dashed var(--perf)}
-.jlabel a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-
-/* sparkles */
-#spk{position:fixed;inset:0;pointer-events:none;z-index:27}
-.night #spk{filter:drop-shadow(0 0 3px rgba(255,214,140,.95))}
-.spk{position:absolute;left:0;top:0;width:10px;height:10px;will-change:transform,opacity;
-  clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);background:var(--j-glint)}
-.spk.au{background:var(--j-g2)}
-@keyframes wag
-/* fireflies */
-.ffl{position:absolute;inset:0;opacity:0;transition:opacity 1800ms var(--ease) calc(var(--d) + 400ms)}
-.night .ffl{opacity:1}
-.ff{position:absolute;left:0;top:0;width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;
-  background:radial-gradient(circle,#fff6cc 0 1.7px,rgba(255,220,140,.62) 2.8px,rgba(255,206,120,0) 13px);will-change:transform,opacity}
-
-/* leaves */
-.leaf{position:absolute;left:-11px;top:-17px;width:22px;height:34px;will-change:transform;
-  filter:drop-shadow(0 12px 6px var(--shadow))}
-.leaf svg{display:block}
-
-/* hanging tags */
-.hang{position:fixed;top:0;z-index:20;transform-origin:50% 0;filter:drop-shadow(2px 9px 7px var(--shadow));
-  transition:filter var(--t) var(--ease) var(--d)}
-.sway{transform-origin:50% 0;animation:sway 6.5s var(--sine) infinite alternate}
-.drop{display:flex;flex-direction:column;align-items:center;animation:drop 1300ms var(--out) both 500ms}
-.toggle-hang .drop{animation-delay:750ms}
-.toggle-hang .sway{animation-duration:5.2s;animation-delay:-2s}
-@keyframes sway{from{transform:rotate(-1.3deg)}to{transform:rotate(1.3deg)}}
-@keyframes drop{from{transform:translate3d(0,-110%,0)}}
-.thread{width:1px;height:calc(var(--len) + 14px);margin-bottom:-14px;background:var(--thread);position:relative;z-index:2;
-  transition:background-color var(--t) var(--ease) var(--d)}
-.tag{position:relative;background-color:var(--tag);background-image:var(--grain-url);
-  transition:background-color var(--t) var(--ease) var(--d),color var(--t) var(--ease) var(--d)}
-.tag::before{content:"";position:absolute;top:6.5px;left:calc(50% - 7.5px);width:15px;height:15px;border-radius:50%;
-  background:var(--ring);transition:background-color var(--t) var(--ease) var(--d)}
-
-.title-hang{right:clamp(16px,6vw,88px);--len:clamp(26px,8vh,92px)}
-.title{padding:2rem 1.6rem 1.05rem 1.5rem;color:var(--ink);min-width:11.5rem}
-.title h1{font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:clamp(2rem,1.2rem + 2.2vw,3.1rem);line-height:1;letter-spacing:.14em}
-.title h1 span{display:block;padding-right:.15em;margin-top:.35rem;font-family:"Vazirmatn",Tahoma,sans-serif;font-weight:300;font-size:.36em;letter-spacing:0;color:var(--ink2);transition:color var(--t) var(--ease) var(--d)}
-.title p{margin-top:.75rem;padding-top:.55rem;border-top:1px dashed var(--perf);font-size:.78rem;line-height:1.4;
-  color:var(--ink2);letter-spacing:.02em;transition:color var(--t) var(--ease) var(--d),border-color var(--t) var(--ease) var(--d)}
-
-.toggle-hang{left:clamp(16px,5vw,64px);--len:clamp(16px,4.5vh,46px)}
-.toggle{display:flex;align-items:center;gap:.6rem;padding:1.7rem 1.05rem .85rem;border:0;font:inherit;font-size:.92rem;direction:ltr;
-  color:var(--ink2);cursor:pointer;touch-action:manipulation}
-.opt{transition:color 500ms var(--ease)}
-.o-day{color:var(--ink)} .night .o-day{color:var(--ink2)} .night .o-night{color:var(--ink)}
-.track{position:relative;width:2.6rem;height:1.3rem;border-radius:1rem;background:var(--groove);
-  box-shadow:inset 0 1px 2px var(--shadow);transition:background-color var(--t) var(--ease)}
-.knob{position:absolute;top:.17rem;left:.17rem;width:.96rem;height:.96rem;border-radius:50%;background:var(--c-sun);
-  box-shadow:0 1px 2px var(--shadow);transition:transform 650ms var(--out),background-color 650ms var(--ease),scale 150ms var(--out)}
-.night .knob{transform:translateX(1.3rem);background:var(--c-moon)}
-.toggle:hover .knob{scale:1.08}
-.toggle:active .knob{scale:.9}
-.toggle:focus-visible .track{outline:2px solid var(--ink);outline-offset:3px}
-
-@media (max-aspect-ratio: 4/5){
-  .title-hang{--len:clamp(18px,4.5vh,48px)}
-  .title{padding:1.85rem 1.2rem .9rem 1.15rem;min-width:0}
-  .title h1{font-size:clamp(1.3rem,5.6vw,1.9rem)}
-  .title p{font-size:.72rem}
-  .toggle{font-size:.85rem;gap:.5rem;padding:1.6rem .85rem .75rem}
-  .toggle-hang{--len:clamp(12px,3vh,30px)}
-}
-@media (prefers-reduced-motion: reduce){
-  .layer > svg,.drop,.hang-c,.bfly,.jw-drop{animation:none}
-  .sway,.hang-c svg,.night .star,.glint{animation:none}
-}
-/* shop tag hanging from the title tag */
-.thread.sub{--len:clamp(14px,3vh,30px)}
-.shop{padding:1.95rem 1.4rem 1.15rem;min-width:11.5rem;text-align:center;color:var(--ink)}
-.shop small{display:block;font-size:.7rem;color:var(--ink2);letter-spacing:.04em;transition:color var(--t) var(--ease) var(--d)}
-.shop h2{font-weight:500;font-size:1.02rem;margin:.2rem 0 .7rem}
-.shop ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.35rem .9rem;font-size:.8rem;margin-bottom:.85rem}
-.shop a{color:inherit;text-decoration:none}
-.shop ul a{color:var(--ink2);border-bottom:1px dashed transparent;transition:color 300ms var(--ease),border-color 300ms var(--ease)}
-.shop ul a:hover{color:var(--ink);border-color:var(--perf)}
-.cta{display:inline-block;padding:.5rem 1.15rem;border-radius:2rem;background:var(--gold);color:var(--tag)!important;font-size:.82rem;font-weight:500;
-  box-shadow:0 1px 2px var(--shadow);transition:background-color var(--t) var(--ease),transform 200ms var(--out)}
-.cta:hover{transform:translateY(-1px)}
-.shop a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
-@media (max-aspect-ratio: 4/5){
-  .shop{padding:1.8rem 1rem 1rem;min-width:0}
-  .shop ul{font-size:.74rem;gap:.3rem .7rem}
-  .title h1{font-size:clamp(1.8rem,8vw,2.4rem)}
-}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-/* ================= NEY STORE ================= */
-:root{--s-bg:#fbf8f2;--s-surf:#ffffff;--s-soft:#f3ecdf;--s-line:#e8decb;--s-ink:#2f251a;--s-ink2:#7a6a55;--s-gold:#a8742a;--s-gold2:#c99a45;--s-on:#fffaf0;--s-ruby:#9e2b3c;--s-ok:#3f7a5c;--s-shadow:0 18px 40px -24px rgba(70,48,20,.35)}
-.night{--s-bg:#15183a;--s-surf:#1c2047;--s-soft:#232857;--s-line:#30366b;--s-ink:#ece6d4;--s-ink2:#a6a4c8;--s-gold:#d0a756;--s-gold2:#e5c47f;--s-on:#15183a;--s-ruby:#d06a86;--s-ok:#7cc4a0;--s-shadow:0 18px 40px -24px rgba(0,0,0,.6)}
-#spk{z-index:300}
-#app{position:fixed;inset:0;z-index:100;overflow-y:auto;overflow-x:hidden;background:var(--s-bg);color:var(--s-ink);
-  font-family:"Vazirmatn",Tahoma,sans-serif;line-height:1.7;opacity:0;visibility:hidden;transform:translateY(18px);
-  transition:opacity 450ms var(--ease),transform 650ms var(--out),visibility 0s 450ms,background-color var(--t) var(--ease),color var(--t) var(--ease);
-  -webkit-overflow-scrolling:touch;overscroll-behavior:contain;scroll-behavior:smooth}
-#app.open{opacity:1;visibility:visible;transform:none;transition-delay:0s}
-#app *{box-sizing:border-box}
-:where(#app) a{color:inherit;text-decoration:none}
-:where(#app) button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
-#app img,#app svg{display:block}
-#app :focus-visible{outline:2px solid var(--s-gold);outline-offset:3px;border-radius:6px}
-.s-wrap{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,32px)}
-.s-ic{width:42px;height:42px;display:inline-grid;place-items:center;border-radius:50%;position:relative;transition:background-color 250ms var(--ease)}
-.s-ic:hover{background:var(--s-soft)}
-.s-ic svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.s-cc{position:absolute;top:4px;left:3px;min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:var(--s-gold);color:var(--s-on);
-  font-size:.66rem;line-height:17px;text-align:center;font-weight:700;transform:scale(0);transition:transform 350ms var(--out)}
-.s-cc.on{transform:scale(1)} .s-cc.bump{animation:bump 450ms var(--out)}
-@keyframes bump{40%{transform:scale(1.45)}}
-
-/* header */
-.s-hd{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--s-bg) 86%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--s-line);transition:background-color var(--t) var(--ease),border-color var(--t) var(--ease)}
-.s-hd-in{height:68px;display:flex;align-items:center;gap:24px}
-.s-logo{display:flex;align-items:baseline;gap:10px;white-space:nowrap}
-.s-logo b{font-family:"Young Serif",Georgia,serif;font-weight:400;font-size:1.7rem;letter-spacing:.16em;line-height:1}
-.s-logo small{font-size:.72rem;color:var(--s-ink2)}
-.s-nav{display:flex;gap:4px;margin-inline-start:12px}
-.s-nav a{padding:8px 12px;border-radius:999px;font-size:.9rem;color:var(--s-ink2);transition:color 250ms,background-color 250ms}
-.s-nav a:hover{color:var(--s-ink)} .s-nav a.on{color:var(--s-ink);background:var(--s-soft)}
-.s-acts{margin-inline-start:auto;display:flex;align-items:center;gap:2px}
-.s-back{display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--s-ink2);padding:0 12px 0 6px;height:42px;border-radius:999px}
-.s-back:hover{background:var(--s-soft);color:var(--s-ink)}
-.s-back svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-
-/* product image (paper + thread) */
-.s-img{position:relative;aspect-ratio:4/5;border-radius:16px;overflow:hidden;background-color:var(--s-soft);background-image:linear-gradient(color-mix(in srgb,var(--s-soft) 74%,transparent),color-mix(in srgb,var(--s-soft) 74%,transparent)),var(--grain-url);
-  display:flex;justify-content:center;transition:background-color var(--t) var(--ease)}
-.s-hang{height:88%;width:64%;display:flex;flex-direction:column;align-items:center;transform-origin:50% 0;
-  animation:sway 6.5s var(--sine) infinite alternate;animation-delay:var(--dl,0s);filter:drop-shadow(0 -1px 0 var(--edge)) drop-shadow(2px 10px 8px var(--shadow))}
-.s-thr{width:1px;flex:0 0 22%;background:var(--thread)}
-.s-img[data-t=ring] .s-hang{width:44%}.s-img[data-t=brace] .s-hang{width:72%}.s-img[data-t=ring]:not(.mini) .s-thr{flex-basis:30%}
-.s-jw{flex:1;width:100%;min-height:0}
-.s-jw svg{width:100%;height:100%;overflow:visible}
-.s-img path{fill-rule:evenodd;transition:fill var(--t) var(--ease)}
-.s-img .g{fill:url(#grain);opacity:var(--grainO)}
-.s-img:hover .glint,.s-pdp-img .glint{animation:glint 1.3s var(--sine) infinite both}
-.s-card:hover .s-hang{animation:swing2 1.6s var(--sine) infinite alternate}
-@keyframes swing2{from{transform:rotate(-3.5deg)}to{transform:rotate(3.5deg)}}
-.s-img.mini{width:72px;flex:0 0 72px;aspect-ratio:1;border-radius:12px}
-.s-img.mini .s-thr{flex-basis:14%}
-.spin svg{animation:spinY 1.4s var(--out)}
-@keyframes spinY{to{transform:rotateY(720deg)}}
-.gd-r{--j-g1:#d39079;--j-g2:#f2c7b5;--j-g3:#9b5b46}
-.gd-w{--j-g1:#c4c8c5;--j-g2:#f4f5f1;--j-g3:#858a86}
-.gm-dia{--j-di:#eef4f2;--j-di2:#c4d6d3;--j-di3:#fff;--j-ru:#e9f0ee;--j-ru2:#fff;--j-em:#e9f0ee;--j-em2:#fff}
-.gm-ruby{--j-di:#b02a40;--j-di2:#7d1a2b;--j-di3:#e0596c;--j-ru:#a82539;--j-ru2:#d4495c;--j-em:#a82539;--j-em2:#d4495c}
-.gm-em{--j-di:#1f7a63;--j-di2:#14594a;--j-di3:#6cc3a5;--j-ru:#1f7a63;--j-ru2:#58b597;--j-em:#1f7a63;--j-em2:#58b597}
-
-/* buttons, chips, fields */
-.s-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:50px;padding:0 28px;border-radius:999px;
-  background:var(--s-gold)!important;color:var(--s-on)!important;font-weight:500!important;font-size:.95rem;white-space:nowrap;
-  transition:transform 250ms var(--out),box-shadow 250ms,background-color var(--t);box-shadow:0 10px 24px -14px var(--s-gold)}
-.s-btn:hover{transform:translateY(-1px);box-shadow:0 14px 28px -14px var(--s-gold)}
-.s-btn:active{transform:translateY(0) scale(.98)}
-.s-btn.ghost{background:transparent!important;color:var(--s-ink)!important;border:1px solid var(--s-line)!important;box-shadow:none}
-.s-btn.full{width:100%}
-.s-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7}
-.s-chips{display:flex;gap:8px;flex-wrap:wrap}
-.s-chip{height:38px;padding:0 16px;border-radius:999px;border:1px solid var(--s-line)!important;font-size:.85rem;color:var(--s-ink2)!important;
-  transition:all 250ms var(--ease);white-space:nowrap}
-.s-chip:hover{color:var(--s-ink)!important}
-.s-chip.on{background:var(--s-ink)!important;color:var(--s-bg)!important;border-color:var(--s-ink)!important}
-.s-sw{width:30px;height:30px;border-radius:50%;border:2px solid var(--s-bg)!important;box-shadow:0 0 0 1px var(--s-line);transition:box-shadow 250ms}
-.s-sw.on{box-shadow:0 0 0 2px var(--s-gold)}
-.s-sw[data-v=y]{background:linear-gradient(135deg,#f3d681,#c8952f)!important}
-.s-sw[data-v=r]{background:linear-gradient(135deg,#f2c7b5,#c27a63)!important}
-.s-sw[data-v=w]{background:linear-gradient(135deg,#fafaf7,#b4b8b5)!important}
-.s-field{display:flex;flex-direction:column;gap:6px;font-size:.85rem}
-.s-field span{color:var(--s-ink2)}
-.s-field input,.s-field textarea,.s-field select,.s-sel{width:100%;height:50px;padding:0 16px;border-radius:14px;border:1px solid var(--s-line);background:var(--s-surf);
-  color:var(--s-ink);font:inherit;font-size:.92rem;transition:border-color 250ms,background-color var(--t)}
-.s-field textarea{height:96px;padding:12px 16px;resize:vertical}
-.s-field input:focus,.s-field textarea:focus,.s-sel:focus{outline:none;border-color:var(--s-gold)}
-.s-field.bad input,.s-field.bad textarea{border-color:var(--s-ruby)}
-.s-field em{font-style:normal;font-size:.75rem;color:var(--s-ruby);display:none} .s-field.bad em{display:block}
-.s-sel{height:40px;width:auto;padding:0 14px;border-radius:999px;font-size:.85rem;cursor:pointer}
-
-/* sections */
-.s-sec{padding:clamp(48px,8vw,96px) 0}
-.s-eye{font-size:.78rem;color:var(--s-gold);letter-spacing:.06em;font-weight:500}
-.s-h2{font-size:clamp(1.4rem,1rem + 1.4vw,2rem);font-weight:500;line-height:1.35;margin-top:4px}
-.s-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:28px}
-.s-link{font-size:.88rem;color:var(--s-ink2);border-bottom:1px solid var(--s-line);padding-bottom:2px}
-.s-link:hover{color:var(--s-ink)}
-
-/* hero */
-.s-hero{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,5vw,64px);align-items:center;padding:clamp(32px,6vw,72px) 0 clamp(24px,4vw,48px)}
-.s-hero h1{font-size:clamp(2.1rem,1.2rem + 3.6vw,3.7rem);font-weight:500;line-height:1.2;margin:10px 0 16px}
-.s-hero h1 i{font-style:normal;color:var(--s-gold)}
-.s-hero p{color:var(--s-ink2);max-width:30rem;font-size:1rem}
-.s-hero .s-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.s-stats{display:flex;gap:32px;margin-top:40px;color:var(--s-ink2);font-size:.8rem}
-.s-stats b{display:block;color:var(--s-ink);font-size:1.25rem;font-weight:500}
-.s-art{position:relative;container-type:size;aspect-ratio:1/1.02;border-radius:28px;background-color:var(--s-soft);background-image:linear-gradient(color-mix(in srgb,var(--s-soft) 70%,transparent),color-mix(in srgb,var(--s-soft) 70%,transparent)),var(--grain-url);overflow:hidden}
-.s-art .s-hh{position:absolute;top:0;display:flex;flex-direction:column;align-items:center;transform-origin:50% 0;
-  animation:sway 6s var(--sine) infinite alternate;filter:drop-shadow(0 -1px 0 var(--edge)) drop-shadow(3px 14px 10px var(--shadow))}
-.s-art .s-hh span{width:1px;background:var(--thread)}
-.s-art .s-hh svg{overflow:visible}
-.s-art .s-hh path{fill-rule:evenodd} .s-art .g{fill:url(#grain);opacity:var(--grainO)}
-.s-art .glint{animation:glint 2.4s var(--sine) infinite both}
-.s-art-tag{position:absolute;bottom:22px;right:22px;background:var(--s-surf);border-radius:14px;padding:12px 16px;font-size:.8rem;box-shadow:var(--s-shadow)}
-.s-art-tag b{display:block;font-weight:500;font-size:.9rem}
-
-/* categories */
-.s-cats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.s-cat{display:flex;flex-direction:column;gap:12px}
-.s-cat .s-img{aspect-ratio:1}
-.s-cat b{font-weight:500} .s-cat small{color:var(--s-ink2);font-size:.78rem;margin-inline-start:6px}
-
-/* product grid */
-.s-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:36px 20px}
-.s-card{position:relative;display:flex;flex-direction:column}
-.s-badge{position:absolute;top:12px;right:12px;z-index:2;font-size:.7rem;padding:3px 10px;border-radius:999px;background:var(--s-surf);color:var(--s-ink)}
-.s-wish{position:absolute;top:8px;left:8px;z-index:2;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;
-  background:color-mix(in srgb,var(--s-surf) 80%,transparent)!important;transition:transform 250ms var(--out)}
-.s-wish svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.6;transition:fill 250ms}
-.s-wish.on svg{fill:var(--s-ruby);stroke:var(--s-ruby)} .s-wish:active{transform:scale(.85)}
-.s-card-b{padding:14px 2px 0}
-.s-card-b h3{font-size:.95rem;font-weight:500;line-height:1.5}
-.s-card-b p{font-size:.78rem;color:var(--s-ink2)}
-.s-price{font-size:.92rem;margin-top:6px;font-weight:500}
-.s-quick{position:absolute;left:12px;right:12px;top:calc(100% - 160px);height:42px;border-radius:999px;background:var(--s-surf)!important;font-size:.82rem!important;
-  box-shadow:var(--s-shadow);opacity:0;transform:translateY(8px);transition:opacity 300ms var(--ease),transform 400ms var(--out)}
-.s-card:hover .s-quick,.s-quick:focus-visible{opacity:1;transform:none}
-.s-quick:hover{background:var(--s-ink)!important;color:var(--s-bg)!important}
-
-/* listing */
-.s-lhead{padding:clamp(28px,5vw,56px) 0 20px}
-.s-lhead h1{font-size:clamp(1.6rem,1.1rem + 2vw,2.5rem);font-weight:500}
-.s-lhead p{color:var(--s-ink2);font-size:.9rem}
-.s-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:16px 0 28px;border-top:1px solid var(--s-line);margin-top:20px}
-.s-bar .s-fl{display:flex;align-items:center;gap:18px;flex-wrap:wrap;font-size:.82rem;color:var(--s-ink2)}
-.s-bar .s-g{display:flex;align-items:center;gap:8px}
-.s-cnt{font-size:.82rem;color:var(--s-ink2)}
-.s-empty{text-align:center;padding:72px 0;color:var(--s-ink2)}
-.s-empty svg{width:44px;height:44px;margin:0 auto 12px;fill:none;stroke:currentColor;stroke-width:1.2}
-.s-empty .s-btn{margin-top:20px}
-
-/* product page */
-.s-crumb{display:flex;gap:8px;align-items:center;font-size:.8rem;color:var(--s-ink2);padding:22px 0}
-.s-crumb a:hover{color:var(--s-ink)}
-.s-pdp{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,5vw,64px);align-items:start}
-.s-pdp-img{position:sticky;top:92px}
-.s-pdp-img .s-img{aspect-ratio:1;border-radius:24px;cursor:pointer}
-.s-pdp-img .s-hang{width:52%}
-.s-pdp-note{font-size:.75rem;color:var(--s-ink2);text-align:center;margin-top:10px}
-.s-info h1{font-size:clamp(1.5rem,1.1rem + 1.6vw,2.2rem);font-weight:500;line-height:1.35;margin:6px 0 4px}
-.s-info .s-sub{color:var(--s-ink2);font-size:.88rem}
-.s-info .s-price{font-size:1.35rem;margin:18px 0 6px}
-.s-info .s-desc{color:var(--s-ink2);font-size:.92rem;margin:14px 0 6px}
-.s-opt{margin-top:24px}
-.s-opt h4{font-size:.82rem;font-weight:500;margin-bottom:10px;display:flex;justify-content:space-between}
-.s-opt h4 span{color:var(--s-ink2);font-weight:400}
-.s-buy{display:flex;gap:10px;margin-top:28px;align-items:center}
-.s-buy .s-btn{flex:1}
-.s-qty{display:inline-flex;align-items:center;height:50px;border:1px solid var(--s-line);border-radius:999px;padding:0 4px}
-.s-qty button{width:38px;height:38px;border-radius:50%;display:grid;place-items:center}
-.s-qty button:hover{background:var(--s-soft)}
-.s-qty svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8}
-.s-qty b{min-width:28px;text-align:center;font-weight:500}
-.s-qty.sm{height:36px}.s-qty.sm button{width:28px;height:28px}
-.s-wbig{width:50px;height:50px;border-radius:50%;border:1px solid var(--s-line)!important;display:grid;place-items:center}
-.s-wbig svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.6}
-.s-wbig.on svg{fill:var(--s-ruby);stroke:var(--s-ruby)}
-.s-trust{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}
-.s-trust div{border:1px solid var(--s-line);border-radius:14px;padding:12px;font-size:.74rem;color:var(--s-ink2);display:flex;flex-direction:column;gap:6px}
-.s-trust svg{width:20px;height:20px;fill:none;stroke:var(--s-gold);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.s-acc{margin-top:28px;border-top:1px solid var(--s-line)}
-.s-acc details{border-bottom:1px solid var(--s-line)}
-.s-acc summary{list-style:none;cursor:pointer;padding:16px 0;font-size:.92rem;font-weight:500;display:flex;justify-content:space-between;align-items:center}
-.s-acc summary::-webkit-details-marker{display:none}
-.s-acc summary::after{content:"+";font-weight:300;font-size:1.3rem;color:var(--s-ink2);transition:transform 300ms var(--out)}
-.s-acc details[open] summary::after{transform:rotate(45deg)}
-.s-acc .s-accb{padding:0 0 18px;color:var(--s-ink2);font-size:.86rem}
-.s-spec{display:grid;grid-template-columns:auto 1fr;gap:6px 24px}
-.s-spec dt{color:var(--s-ink2)} .s-spec dd{color:var(--s-ink)}
-
-/* story / features / newsletter / footer */
-.s-story{border-radius:28px;background-color:var(--s-soft);background-image:linear-gradient(color-mix(in srgb,var(--s-soft) 70%,transparent),color-mix(in srgb,var(--s-soft) 70%,transparent)),var(--grain-url);padding:clamp(32px,6vw,72px);display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:center}
-.s-story p{color:var(--s-ink2);margin-top:12px}
-.s-feats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.s-feat{background:var(--s-surf);border-radius:18px;padding:20px;transition:background-color var(--t)}
-.s-feat svg{width:26px;height:26px;fill:none;stroke:var(--s-gold);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;margin-bottom:12px}
-.s-feat b{display:block;font-weight:500;font-size:.92rem}
-.s-feat span{font-size:.78rem;color:var(--s-ink2)}
-.s-news{text-align:center;max-width:560px;margin:0 auto}
-.s-news p{color:var(--s-ink2);margin-top:8px}
-.s-news form{display:flex;gap:8px;margin-top:24px}
-.s-news .s-field{flex:1}
-.s-ft{border-top:1px solid var(--s-line);padding:48px 0 32px;font-size:.84rem;color:var(--s-ink2)}
-.s-ft-g{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px}
-.s-ft h5{color:var(--s-ink);font-size:.88rem;font-weight:500;margin-bottom:12px}
-.s-ft ul{list-style:none;display:flex;flex-direction:column;gap:8px}
-.s-ft a:hover{color:var(--s-ink)}
-.s-ft .s-logo b{font-size:1.5rem}
-.s-ft-b{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:40px;padding-top:20px;border-top:1px solid var(--s-line);font-size:.76rem}
-
-/* drawer */
-.s-ov{position:fixed;inset:0;z-index:30;background:rgba(24,18,10,.38);opacity:0;visibility:hidden;transition:opacity 400ms var(--ease),visibility 0s 400ms}
-.s-ov.open{opacity:1;visibility:visible;transition-delay:0s}
-.s-drawer{position:fixed;top:0;bottom:0;left:0;z-index:31;width:min(430px,100%);background:var(--s-surf);display:flex;flex-direction:column;
-  transform:translateX(-102%);transition:transform 550ms var(--out),background-color var(--t);box-shadow:0 0 60px rgba(0,0,0,.18)}
-.s-drawer.open{transform:none}
-.s-dh{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid var(--s-line)}
-.s-dh b{font-weight:500}
-.s-db{flex:1;overflow-y:auto;padding:8px 20px}
-.s-df:empty{display:none}
-.s-df{padding:18px 20px calc(18px + env(safe-area-inset-bottom));border-top:1px solid var(--s-line)}
-.s-line{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--s-line);align-items:center}
-.s-line:last-child{border-bottom:0}
-.s-line .s-li{flex:1;min-width:0;font-size:.82rem}
-.s-line .s-li b{display:block;font-weight:500;font-size:.88rem}
-.s-line .s-li small{color:var(--s-ink2);display:block}
-.s-line .s-lr{display:flex;align-items:center;justify-content:space-between;margin-top:8px;gap:8px}
-.s-rm{color:var(--s-ink2)!important;width:32px;height:32px;display:grid;place-items:center;border-radius:50%}
-.s-rm svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.6}
-.s-rm:hover{background:var(--s-soft)}
-.s-tot{display:flex;justify-content:space-between;font-size:.88rem;margin-bottom:6px;color:var(--s-ink2)}
-.s-tot.big{color:var(--s-ink);font-size:1.02rem;font-weight:500;margin:10px 0 16px}
-.s-prog{font-size:.76rem;color:var(--s-ink2);margin-bottom:14px}
-.s-prog i{display:block;height:4px;border-radius:2px;background:var(--s-soft);margin-top:8px;overflow:hidden}
-.s-prog i::after{content:"";display:block;height:100%;width:var(--p);background:var(--s-gold);border-radius:2px;transition:width 600ms var(--out)}
-
-/* search */
-.s-search{position:fixed;top:0;left:0;right:0;z-index:32;background:var(--s-surf);padding:18px 0 22px;box-shadow:var(--s-shadow);
-  transform:translateY(-105%);transition:transform 500ms var(--out),background-color var(--t)}
-.s-search.open{transform:none}
-.s-sbox{display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--s-line);padding-bottom:10px}
-.s-sbox svg{width:22px;height:22px;fill:none;stroke:var(--s-ink2);stroke-width:1.6}
-.s-sbox input{flex:1;height:44px;border:0;background:none;font:inherit;font-size:1.1rem;color:var(--s-ink);outline:none}
-.s-sres{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px;margin-top:14px;max-height:60vh;overflow-y:auto}
-.s-sres a{display:flex;gap:12px;align-items:center;padding:8px;border-radius:14px;font-size:.85rem}
-.s-sres a:hover{background:var(--s-soft)}
-.s-sres .s-img.mini{width:56px;flex-basis:56px}
-.s-sres small{display:block;color:var(--s-ink2)}
-
-/* checkout */
-.s-co{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(24px,4vw,56px);align-items:start;padding-bottom:64px}
-.s-co h1{font-size:clamp(1.5rem,1.1rem + 1.6vw,2.2rem);font-weight:500;padding:28px 0 8px}
-.s-box{border:1px solid var(--s-line);border-radius:20px;padding:clamp(18px,3vw,28px);margin-top:18px;background:var(--s-surf);transition:background-color var(--t)}
-.s-box h3{font-size:.98rem;font-weight:500;margin-bottom:16px;display:flex;align-items:center;gap:10px}
-.s-box h3 i{font-style:normal;width:24px;height:24px;border-radius:50%;background:var(--s-ink);color:var(--s-bg);display:grid;place-items:center;font-size:.74rem}
-.s-fg{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.s-fg .w{grid-column:1/-1}
-.s-radio{display:flex;align-items:center;gap:12px;border:1px solid var(--s-line);border-radius:14px;padding:14px 16px;cursor:pointer;margin-bottom:10px;font-size:.88rem;transition:border-color 250ms}
-.s-radio:has(input:checked){border-color:var(--s-gold);background:color-mix(in srgb,var(--s-gold) 6%,transparent)}
-.s-radio input{accent-color:var(--s-gold);width:18px;height:18px}
-.s-radio span{flex:1} .s-radio small{display:block;color:var(--s-ink2);font-size:.76rem}
-.s-sum{position:sticky;top:92px}
-.s-demo{font-size:.74rem;color:var(--s-ink2);text-align:center;margin-top:10px}
-.s-done{text-align:center;max-width:520px;margin:0 auto;padding:72px 0 96px}
-.s-done .s-ok{width:76px;height:76px;border-radius:50%;margin:0 auto 20px;display:grid;place-items:center;background:color-mix(in srgb,var(--s-ok) 14%,transparent)}
-.s-done .s-ok svg{width:36px;height:36px;fill:none;stroke:var(--s-ok);stroke-width:2}
-.s-done h1{font-size:1.8rem;font-weight:500}
-.s-done p{color:var(--s-ink2);margin-top:8px}
-.s-done .s-row{display:flex;gap:10px;justify-content:center;margin-top:28px;flex-wrap:wrap}
-
-/* tabs + toast */
-.s-tabs{display:none}
-.s-toast{position:fixed;left:50%;bottom:28px;z-index:40;transform:translate(-50%,20px);opacity:0;background:var(--s-ink);color:var(--s-bg);
-  padding:12px 20px;border-radius:999px;font-size:.85rem;transition:all 400ms var(--out);pointer-events:none;white-space:nowrap;box-shadow:var(--s-shadow)}
-.s-toast.on{opacity:1;transform:translate(-50%,0)}
-.s-view{animation:viewin 600ms var(--out) both}
-@keyframes viewin{from{opacity:0;transform:translateY(12px)}}
-
-@media (max-width:960px){
-  .s-grid{grid-template-columns:repeat(3,1fr)}
-  .s-ft-g{grid-template-columns:1fr 1fr}
-  .s-story{grid-template-columns:1fr}
-}
-@media (max-width:760px){
-  .s-nav,.s-back span,.s-logo small{display:none}
-  .s-hd-in{height:60px;gap:8px}
-  .s-hero{grid-template-columns:1fr;padding-top:20px}
-  .s-art{order:-1;aspect-ratio:1.25}
-  .s-stats{gap:22px;margin-top:28px}
-  .s-cats{grid-template-columns:repeat(2,1fr);gap:12px}
-  .s-grid{grid-template-columns:repeat(2,1fr);gap:26px 12px}
-  .s-quick{display:none}
-  .s-pdp,.s-co{grid-template-columns:1fr}
-  .s-pdp-img,.s-sum{position:static}
-  .s-feats{grid-template-columns:1fr}
-  .s-fg{grid-template-columns:1fr}
-  .s-ft-g{grid-template-columns:1fr 1fr;gap:24px}
-  .s-ft-g>div:first-child{grid-column:1/-1}
-  .s-news form{flex-direction:column}
-  .s-hide-m{display:none!important}
-  #app main{padding-bottom:84px}
-  .s-tabs{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:12;height:calc(64px + env(safe-area-inset-bottom));padding-bottom:env(safe-area-inset-bottom);
-    background:color-mix(in srgb,var(--s-surf) 92%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--s-line)}
-  .s-tabs a,.s-tabs button{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:.68rem;color:var(--s-ink2);position:relative}
-  .s-tabs .on{color:var(--s-ink)}
-  .s-tabs svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-  .s-tabs .s-cc{top:6px;left:calc(50% - 22px)}
-  .s-toast{bottom:84px}
-  .s-drawer{top:auto;left:0;right:0;width:100%;max-height:88vh;border-radius:22px 22px 0 0;transform:translateY(102%)}
-  .s-drawer.open{transform:none}
-  .s-bar{gap:12px}
-  .s-trust{grid-template-columns:1fr 1fr 1fr}
-}
-@media (prefers-reduced-motion: reduce){.s-hang,.s-art .s-hh,.s-view{animation:none!important}}
-
-/* ================= MOBILE POLISH ================= */
-html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
-#app{-webkit-tap-highlight-color:transparent;overscroll-behavior-y:contain}
-#app a,#app button,#app summary,#app label{touch-action:manipulation}
-/* fix: section padding was overriding .s-wrap side gutters */
-.s-wrap.s-hero,.s-wrap.s-sec{padding-inline:clamp(16px,4vw,32px)}
-.s-pdp{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
-.s-pdp>*,.s-co>*,.s-hero>*{min-width:0}
-.s-hd{padding-top:env(safe-area-inset-top)}
-.s-search{padding-top:calc(18px + env(safe-area-inset-top))}
-.s-tabs .s-cc{pointer-events:none}
-@media (hover:none){
-  .s-card:hover .s-quick{opacity:0}
-  .s-btn:active,.s-chip:active,.s-ic:active,.s-cat:active .s-img,.s-card>a:active .s-img{transform:scale(.97)}
-  .s-btn,.s-chip,.s-ic,.s-img{transition:transform 180ms var(--out),background-color 250ms var(--ease)}
-}
-@media (max-width:760px){
-  body{font-size:15px}
-  .s-hd-in{height:56px}
-  .s-logo b{font-size:1.45rem}
-  .s-acts{gap:0;margin-inline-end:-6px}
-  .s-ic{width:44px;height:44px}
-  /* hero */
-  .s-hero{gap:22px;padding-top:14px;padding-bottom:8px}
-  .s-art{aspect-ratio:1.15;border-radius:22px}
-  .s-art-tag{bottom:14px;right:14px;padding:10px 14px}
-  .s-hero h1{font-size:clamp(1.9rem,8.4vw,2.4rem);margin:6px 0 10px}
-  .s-hero p{font-size:.95rem}
-  .s-hero .s-row{margin-top:22px;gap:10px;flex-wrap:nowrap}
-  .s-hero .s-row .s-btn{flex:1;padding:0 14px;white-space:nowrap;font-size:.88rem}
-  .s-stats{justify-content:space-between;gap:8px;margin-top:24px;padding-top:18px;border-top:1px solid var(--s-line)}
-  .s-stats>div{text-align:center;flex:1}
-  .s-stats b{font-size:1.1rem}
-  /* sections */
-  .s-sec{padding-block:44px}
-  .s-head{margin-bottom:18px;align-items:center}
-  .s-h2{font-size:1.35rem}
-  /* horizontal, swipeable chip rows */
-  .s-lhead{padding:22px 0 10px}
-  .s-chips[role=tablist],.s-bar .s-g:not(:last-child),.s-opt .s-chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
-    scroll-snap-type:x proximity;margin-inline:-16px;padding:2px 16px 4px;scroll-padding-inline:16px}
-  .s-chips[role=tablist]::-webkit-scrollbar,.s-bar .s-g::-webkit-scrollbar,.s-opt .s-chips::-webkit-scrollbar{display:none}
-  .s-chips>*,.s-bar .s-g>*{flex:0 0 auto;scroll-snap-align:start}
-  .s-chip{height:40px}
-  .s-sw{width:34px;height:34px}
-  .s-bar{display:block;padding:14px 0 20px;margin-top:14px}
-  .s-bar .s-fl{display:flex;flex-direction:column;align-items:stretch;gap:12px}
-  .s-bar .s-g>span:first-child{min-width:52px}
-  .s-bar .s-g:last-child{justify-content:space-between}
-  .s-grid{gap:22px 12px}
-  .s-card-b{padding-top:10px}
-  .s-card-b h3{font-size:.9rem}
-  .s-card-b p{font-size:.74rem}
-  .s-badge{top:10px;right:10px}
-  .s-wish{width:40px;height:40px;top:6px;left:6px}
-  /* product page */
-  .s-crumb{padding:14px 0;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
-  .s-pdp,.s-co{grid-template-columns:minmax(0,1fr)}
-  .s-pdp{gap:20px}
-  .s-pdp-img{margin-inline:-16px}
-  .s-pdp-img .s-img{border-radius:0}
-  .s-info h1{font-size:1.5rem}
-  .s-info .s-price{font-size:1.3rem;margin:12px 0 4px}
-  .s-buy{position:sticky;z-index:5;bottom:calc(72px + env(safe-area-inset-bottom));margin-inline:-8px;padding:8px;border-radius:999px;
-    background:color-mix(in srgb,var(--s-surf) 94%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-    box-shadow:0 10px 30px -12px rgba(70,48,20,.35),0 0 0 1px var(--s-line)}
-  .s-buy .s-btn{padding:0 16px}
-  .s-trust{gap:8px}
-  .s-trust div{padding:10px;font-size:.7rem;align-items:center;text-align:center}
-  .s-acc summary{padding:18px 0}
-  /* story / features / footer */
-  .s-story{border-radius:22px;padding:28px 20px;gap:24px}
-  .s-feats{gap:10px}
-  .s-feat{display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:center;padding:16px}
-  .s-feat svg{grid-row:span 2;margin:0}
-  .s-news .s-btn{width:100%}
-  .s-ft{padding:36px 0 24px}
-  .s-ft-b{flex-direction:column;margin-top:28px}
-  /* checkout */
-  .s-co{gap:8px;padding-bottom:32px}
-  .s-box{border-radius:18px;padding:18px 16px}
-  .s-radio{padding:14px}
-  .s-sum .s-btn.full{position:sticky;bottom:calc(72px + env(safe-area-inset-bottom))}
-  /* bottom bar + drawer + toast */
-  .s-tabs{height:calc(62px + env(safe-area-inset-bottom))}
-  .s-tabs a,.s-tabs button{font-size:.66rem;gap:3px}
-  .s-tabs>.on::before{content:"";position:absolute;top:0;left:50%;width:22px;height:3px;border-radius:0 0 3px 3px;background:var(--s-gold);transform:translateX(-50%)}
-  .s-tabs>.on svg{stroke:var(--s-gold)}
-  .s-toast{bottom:calc(80px + env(safe-area-inset-bottom));width:max-content;max-width:calc(100% - 32px);white-space:normal;text-align:center}
-  .s-drawer{max-height:86dvh;padding-top:10px;touch-action:pan-y}
-  .s-drawer::before{content:"";position:absolute;top:8px;left:50%;width:40px;height:4px;border-radius:2px;background:var(--s-line);transform:translateX(-50%)}
-  .s-db{overscroll-behavior:contain}
-  .s-sres{grid-template-columns:1fr;max-height:calc(100dvh - 140px)}
-  .s-sbox input{font-size:1rem}
-}
-@media (max-width:360px){
-  .s-hero .s-row{flex-wrap:wrap}
-  .s-hero .s-row .s-btn{flex:1 1 100%}
-  .s-grid{gap:18px 10px}
-  .s-trust{grid-template-columns:1fr}
-  .s-trust div{flex-direction:row;justify-content:flex-start;text-align:start}
-  .s-buy .s-qty button{width:32px}
-}
-@media (max-width:760px) and (prefers-reduced-motion:reduce){.s-btn,.s-chip,.s-ic,.s-img{transition:none}}
-</style>
-</head>
-<body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <defs>
-    <pattern id="grain" patternUnits="userSpaceOnUse" width="192" height="192"><image id="grainImg" width="192" height="192"/></pattern>
-    <radialGradient id="winglow"><stop offset="0" stop-color="#ffd27d" stop-opacity=".85"/><stop offset=".4" stop-color="#ffc35e" stop-opacity=".32"/><stop offset="1" stop-color="#ffb84d" stop-opacity="0"/></radialGradient>
-  </defs>
-</svg>
-
-<main>
-  <div id="stage" aria-label="جنگلی کاغذی با تپه‌ها، کاج‌ها، رودخانه، قارچ‌ها و پروانه طلایی NEY و جواهرات آویزان"></div>
-
-  <div class="hang title-hang" id="titleHang" style="--d:900ms" dir="rtl">
-    <div class="sway"><div class="drop">
-      <span class="thread"></span>
-      <div class="tag title" id="titleTag">
-        <h1>NEY <span>طلا و جواهر دست‌ساز</span></h1>
-        <p id="hint">جواهرات را تاب دهید · روی پروانه بزنید</p>
-      </div>
-      <span class="thread sub"></span>
-      <nav class="tag shop" id="shopTag" aria-label="کالکشن‌ها">
-        <small>کالکشن پاییز ۱۴۰۵</small>
-        <h2>زیورهای جنگل طلایی</h2>
-        <ul>
-          <li><a href="#shop/rings">انگشتر</a></li>
-          <li><a href="#shop/necklaces">گردنبند</a></li>
-          <li><a href="#shop/bracelets">دستبند</a></li>
-          <li><a href="#shop/earrings">گوشواره</a></li>
-        </ul>
-        <a class="cta" href="#shop">مشاهده و خرید</a>
-      </nav>
-    </div></div>
-  </div>
-
-  <div class="hang toggle-hang" id="toggleHang" style="--d:900ms">
-    <div class="sway"><div class="drop">
-      <span class="thread"></span>
-      <button class="tag toggle" id="toggle" aria-pressed="false" aria-label="حالت شب">
-        <span class="opt o-day" aria-hidden="true">روز</span>
-        <span class="track" aria-hidden="true"><span class="knob"></span></span>
-        <span class="opt o-night" aria-hidden="true">شب</span>
-      </button>
-    </div></div>
-  </div>
-  <div id="jewels" dir="rtl"></div>
-  <button class="bfly" id="bfly" type="button" aria-label="پروانه طلایی NEY — بزنید تا برقصد"></button>
-  <div id="spk" aria-hidden="true"></div>
-</main>
-<div id="app" dir="rtl" lang="fa" aria-label="فروشگاه NEY"></div>
-
-<script>
 (() => {
 const root = document.documentElement;
 const stage = document.getElementById('stage');
@@ -1440,15 +705,16 @@ const ICP={search:'<circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/>'
   hand:'<path d="M7 11V6.5a1.5 1.5 0 0 1 3 0V11M10 10V5a1.5 1.5 0 0 1 3 0v5M13 10V6a1.5 1.5 0 0 1 3 0v6M16 9.5a1.5 1.5 0 0 1 3 0V14a6 6 0 0 1-6 6h-1a6 6 0 0 1-5.2-3L5 13.5a1.5 1.5 0 0 1 2.4-1.8L9 13"/>'};
 const ic=n=>`<svg viewBox="0 0 24 24" aria-hidden="true">${ICP[n]}</svg>`;
 
-const CAT={rings:'انگشتر',necklaces:'گردنبند',earrings:'گوشواره',bracelets:'دستبند'};
-const CATD={rings:'حلقه‌ها و انگشترهایی با نگین آویخته، مثل قطره‌ای که از برگ می‌چکد.',necklaces:'آویزهای برگ نی؛ نشانه NEY، روی زنجیرهای ظریف کابلی.',earrings:'گوشواره‌های قطره‌ای سبک با قاب طلا و مروارید پرورشی.',bracelets:'النگوهای ظریف با نگین‌های ردیفی، برای هر روز و هر مهمانی.'};
+const ND=window.NEY_DATA||null;
+const CAT=ND&&ND.cats?ND.cats:{rings:'انگشتر',necklaces:'گردنبند',earrings:'گوشواره',bracelets:'دستبند'};
+const CATD=ND&&ND.catd?ND.catd:{rings:'حلقه‌ها و انگشترهایی با نگین آویخته، مثل قطره‌ای که از برگ می‌چکد.',necklaces:'آویزهای برگ نی؛ نشانه NEY، روی زنجیرهای ظریف کابلی.',earrings:'گوشواره‌های قطره‌ای سبک با قاب طلا و مروارید پرورشی.',bracelets:'النگوهای ظریف با نگین‌های ردیفی، برای هر روز و هر مهمانی.'};
 const GOLD={y:'زرد',r:'رزگلد',w:'سفید'}, GEM={dia:'الماس',ruby:'یاقوت',em:'زمرد'};
 const TYPE={rings:'ring',necklaces:'neck',earrings:'ear',bracelets:'brace'};
 const DESC={ring:'حلقه‌ای ظریف از طلای ۱۸ عیار با نگینی که مثل قطره شبنم از آن آویخته است. تمام مراحل ساخت، از ریخته‌گری تا نشاندن نگین، با دست در کارگاه NEY انجام می‌شود.',
   neck:'آویزی به شکل برگ نی — نشانه برند NEY — با نگین کابوشن، روی زنجیر کابلی ظریف. سبک، روزمره و ماندگار.',
   ear:'گوشواره قطره‌ای با قاب طلای ۱۸ عیار، نگین تراش‌خورده و یک مروارید پرورشی کوچک که با هر حرکت تاب می‌خورد.',
   brace:'النگوی سبک با سه نگین در جلو. لبه‌های داخلی صیقلی و گرد شده‌اند تا استفاده روزانه راحت باشد.'};
-const P=[
+const P=(ND&&ND.products?ND.products:[
   {id:1,cat:'rings',name:'حلقه سولیتر نی',gem:'dia',gold:'y',price:48500000,wt:3.2,tag:'پرفروش',d:1},
   {id:2,cat:'rings',name:'حلقه یاقوت شب',gem:'ruby',gold:'r',price:36800000,wt:2.9,tag:'جدید',d:9},
   {id:3,cat:'rings',name:'انگشتر زمرد جنگل',gem:'em',gold:'y',price:41200000,wt:3.4,d:5},
@@ -1461,20 +727,22 @@ const P=[
   {id:10,cat:'bracelets',name:'النگو سه‌نگین',gem:'dia',gold:'y',price:69800000,wt:7.4,tag:'پرفروش',d:4},
   {id:11,cat:'bracelets',name:'النگو یاقوت پاییز',gem:'ruby',gold:'r',price:64200000,wt:7.1,d:12},
   {id:12,cat:'bracelets',name:'النگو زمرد',gem:'em',gold:'w',price:66500000,wt:7.2,tag:'جدید',d:6},
-].map(p=>({...p,t:TYPE[p.cat]}));
+]).map(p=>({...p,t:p.t||TYPE[p.cat]||'ring'}));
 const byId=id=>P.find(p=>p.id===id);
 const SJ={ring:JW[1],neck:JW[0],ear:JW[2],brace:{id:'brace',seed:304,w:100,h:76}};
 const svgC={};
 const jsvg=t=>svgC[t]||(svgC[t]=jewelSVG(SJ[t]).replace('<svg ','<svg preserveAspectRatio="xMidYMin meet" '));
-const pimg=(p,gold,cls='',dl)=>`<div class="s-img gd-${gold||p.gold} gm-${p.gem} ${cls}" data-t="${p.t}"><div class="s-hang" style="--dl:${dl??-(p.id*.7)%6}s"><span class="s-thr"></span><div class="s-jw">${jsvg(p.t)}</div></div></div>`;
+const pimg=(p,gold,cls='',dl)=>{const g=gold||p.gold,src=(p.imgs&&p.imgs[g])||p.img;if(src) return `<div class="s-img photo ${cls}" data-t="${p.t}"><img src="${src}" alt="${p.name}" loading="lazy" decoding="async"></div>`;return `<div class="s-img gd-${g} gm-${p.gem} ${cls}" data-t="${p.t}"><div class="s-hang" style="--dl:${dl??-(p.id*.7)%6}s"><span class="s-thr"></span><div class="s-jw">${jsvg(p.t)}</div></div></div>`;};
 
 /* state */
 const LS={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d;}catch(e){return d;}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}};
-let cart=LS.get('ney-cart',[]), wish=new Set(LS.get('ney-wish',[])), lastOrder=null;
+let cart=LS.get('ney-cart',[]).filter(c=>byId(c.id)), wish=new Set(LS.get('ney-wish',[]).filter(id=>byId(id))), lastOrder=null;
 const F={cat:'all',gold:null,gem:null,sort:'rec'};
 let pd=null;
 const save=()=>{LS.set('ney-cart',cart);LS.set('ney-wish',[...wish]);};
-const defOpt=p=>p.t==='ring'?'۵۲':p.t==='neck'?'۴۵ سانتی‌متر':p.t==='brace'?'متوسط':'—';
+const optsOf=p=>p.opts&&p.opts.length?p.opts:OPTS[p.t];
+const defOpt=p=>{const o=optsOf(p);if(!o||!o.length) return '—';const d={ring:'۵۲',neck:'۴۵ سانتی‌متر',brace:'متوسط'}[p.t];return o.includes(d)?d:o[Math.floor((o.length-1)/2)];};
+const goldsOf=p=>p.golds&&p.golds.length?p.golds:Object.keys(GOLD);
 const OPTS={ring:['۴۸','۵۰','۵۲','۵۴','۵۶','۵۸'],neck:['۴۲ سانتی‌متر','۴۵ سانتی‌متر','۵۰ سانتی‌متر'],brace:['کوچک','متوسط','بزرگ']};
 const OPTN={ring:'سایز انگشت',neck:'طول زنجیر',brace:'اندازه'};
 function addCart(id,gold,opt,qty=1){
@@ -1483,7 +751,9 @@ function addCart(id,gold,opt,qty=1){
   save();counts(true);toast(`«${p.name}» به سبد خرید اضافه شد`);
 }
 const sub=()=>cart.reduce((a,c)=>a+byId(c.id).price*c.qty,0);
-const FREE=50000000;
+const SH=Object.assign({free:50000000,post:350000,courier:450000},ND&&ND.ship||{});
+const FREE=SH.free;
+const mil=n=>toFa(Math.round(n/1e5)/10)+' میلیون تومان';
 function counts(b){
   const n=cart.reduce((a,c)=>a+c.qty,0),w=wish.size;
   app.querySelectorAll('[data-cc=cart]').forEach(e=>{e.textContent=toFa(n);e.classList.toggle('on',n>0);if(b){e.classList.remove('bump');void e.offsetWidth;e.classList.add('bump');}});
@@ -1496,9 +766,9 @@ const burst=el=>{const r=el.getBoundingClientRect();spark(r.left+r.width/2,r.top
 const sv=()=>document.getElementById('sv');
 function card(p){
   const w=wish.has(p.id);
-  return `<article class="s-card"><a href="#p/${p.id}" aria-label="${p.name}">${pimg(p)}</a>${p.tag?`<span class="s-badge">${p.tag}</span>`:''}
+  return `<article class="s-card"><a href="#p/${p.id}" aria-label="${p.name}">${pimg(p)}</a>${p.stock===false?`<span class="s-badge">ناموجود</span>`:p.tag?`<span class="s-badge">${p.tag}</span>`:''}
   <button class="s-wish ${w?'on':''}" data-act="wish" data-id="${p.id}" aria-pressed="${w}" aria-label="علاقه‌مندی">${ic('heart')}</button>
-  <button class="s-quick" data-act="quick" data-id="${p.id}">افزودن سریع به سبد</button>
+  ${p.stock===false?'':`<button class="s-quick" data-act="quick" data-id="${p.id}">افزودن سریع به سبد</button>`}
   <div class="s-card-b"><a href="#p/${p.id}"><h3>${p.name}</h3></a><p>${GEM[p.gem]} · طلای ${GOLD[p.gold]} ۱۸ عیار</p><div class="s-price">${fmt(p.price)}</div></div></article>`;
 }
 function footer(){return `<footer class="s-ft"><div class="s-wrap"><div class="s-ft-g">
@@ -1509,19 +779,20 @@ function footer(){return `<footer class="s-ft"><div class="s-wrap"><div class="s
   </div><div class="s-ft-b"><span>© ${toFa(1405)} NEY · تمامی حقوق محفوظ است.</span><span>پاسخگویی: شنبه تا پنجشنبه، ${toFa(10)} تا ${toFa(19)}</span></div></div></footer>`;}
 function feats(){return `<div class="s-feats">
   <div class="s-feat">${ic('shield')}<b>ضمانت اصالت</b><span>شناسنامه و فاکتور رسمی برای هر قطعه</span></div>
-  <div class="s-feat">${ic('truck')}<b>ارسال بیمه‌شده</b><span>رایگان برای سفارش‌های بالای ۵۰ میلیون تومان</span></div>
+  <div class="s-feat">${ic('truck')}<b>ارسال بیمه‌شده</b><span>${FREE>0?`رایگان برای سفارش‌های بالای ${mil(FREE)}`:'رایگان برای همه سفارش‌ها'}</span></div>
   <div class="s-feat">${ic('refresh')}<b>۷ روز بازگشت</b><span>تعویض سایز و بازگشت بدون پرسش</span></div></div>`;}
 function renderHome(){
-  const best=P.filter(p=>p.tag==='پرفروش'||p.id===4).slice(0,4);
+  const best=(()=>{const a=P.filter(p=>p.featured||p.tag==='پرفروش'||p.tag==='نشان برند');return (a.length?a:P).slice(0,4);})();
   const neu=[...P].sort((a,b)=>b.d-a.d).slice(0,4);
-  const h=[[1,'38%','17%',.95,-1],[4,'14%','40%',1.25,-3],[7,'60%','28%',.9,-2]];
+  const hid=(ND&&ND.hero&&ND.hero.length?ND.hero:[1,4,7]).filter(byId);while(hid.length<3&&P.length){const q=P.find(p=>!hid.includes(p.id));if(!q) break;hid.push(q.id);}
+  const h=[['38%','17%',.95,-1],['14%','40%',1.25,-3],['60%','28%',.9,-2]].slice(0,hid.length).map((v,i)=>[hid[i],...v]);const hp=byId(hid[1]||hid[0]);
   sv().innerHTML=`<div class="s-view"><section class="s-wrap s-hero">
    <div><span class="s-eye">کالکشن پاییز ${toFa(1405)}</span><h1>زیورهای <i>جنگل طلایی</i></h1>
    <p>قطعه‌هایی سبک و دست‌ساز از طلای ۱۸ عیار؛ هر کدام آویخته از نخی نازک، مثل برگی که در نسیم می‌رقصد.</p>
    <div class="s-row"><a class="s-btn" href="#shop/all">خرید کالکشن</a><a class="s-btn ghost" href="#shop/necklaces">برگ نی، نشان NEY</a></div>
    <div class="s-stats"><div><b>${toFa(18)} عیار</b>طلای استاندارد</div><div><b>${toFa(100)}٪</b>دست‌ساز</div><div><b>${toFa(7)} روز</b>ضمانت بازگشت</div></div></div>
    <div class="s-art" data-act="spinart">${h.map(([id,x,len,sc,dl])=>{const p=byId(id),J=SJ[p.t];return `<div class="s-hh gd-${p.gold} gm-${p.gem}" style="left:${x};animation-delay:${dl}s"><span style="height:${len.replace('%','cqh')}"></span><svg style="width:${(J.w*.3*sc).toFixed(1)}cqw;height:${(J.h*.3*sc).toFixed(1)}cqw" viewBox="${-J.w/2} 0 ${J.w} ${J.h}">${jsvg(p.t).replace(/^<svg[^>]*>/,'').replace(/<\/svg>$/,'')}</svg></div>`;}).join('')}
-   <div class="s-art-tag"><b>گردنبند برگ نی</b>${fmt(52900000)}</div></div></section>
+   ${hp?`<a class="s-art-tag" href="#p/${hp.id}"><b>${hp.name}</b>${fmt(hp.price)}</a>`:''}</div></section>
    <section class="s-wrap s-sec" style="padding-top:24px"><div class="s-head"><div><span class="s-eye">دسته‌بندی‌ها</span><h2 class="s-h2">برای هر لحظه، یک درخشش</h2></div><a class="s-link" href="#shop/all">همه محصولات</a></div>
    <div class="s-cats">${Object.keys(CAT).map((c,i)=>{const p=P.find(q=>q.cat===c);return `<a class="s-cat" href="#shop/${c}">${pimg(p,null,'',-i*1.3)}<div><b>${CAT[c]}</b><small>${toFa(P.filter(q=>q.cat===c).length)} مدل</small></div></a>`;}).join('')}</div></section>
    <section class="s-wrap s-sec" style="padding-top:0"><div class="s-head"><div><span class="s-eye">محبوب‌ترین‌ها</span><h2 class="s-h2">پرفروش‌های NEY</h2></div><a class="s-link" href="#shop/all">مشاهده همه</a></div>
@@ -1561,21 +832,21 @@ function renderPDP(id){
   const p=byId(id);if(!p){renderList('all');return;}
   if(!pd||pd.id!==id) pd={id,gold:p.gold,opt:defOpt(p),qty:1};
   const w=wish.has(id), rel=P.filter(q=>q.cat===p.cat&&q.id!==id).concat(P.filter(q=>q.cat!==p.cat&&q.gem===p.gem)).slice(0,4);
-  const opts=OPTS[p.t];
+  const opts=optsOf(p),oos=p.stock===false;
   sv().innerHTML=`<div class="s-view"><div class="s-wrap">
   <nav class="s-crumb"><a href="#shop">فروشگاه</a>${ic('chev').replace('<svg','<svg width="14" height="14" style="fill:none;stroke:currentColor;stroke-width:1.6"')}<a href="#shop/${p.cat}">${CAT[p.cat]}</a>${ic('chev').replace('<svg','<svg width="14" height="14" style="fill:none;stroke:currentColor;stroke-width:1.6"')}<span>${p.name}</span></nav>
   <div class="s-pdp"><div class="s-pdp-img"><div id="pImg" data-act="spin" role="button" tabindex="0" aria-label="چرخاندن جواهر">${pimg(p,pd.gold,'',0)}</div><p class="s-pdp-note">برای چرخاندن جواهر، رویش بزنید</p></div>
   <div class="s-info">${p.tag?`<span class="s-eye">${p.tag}</span>`:`<span class="s-eye">${CAT[p.cat]}</span>`}<h1>${p.name}</h1>
   <p class="s-sub">${GEM[p.gem]} · طلای ۱۸ عیار · وزن تقریبی ${toFa(p.wt)} گرم</p><div class="s-price">${fmt(p.price)}</div>
-  <p class="s-desc">${DESC[p.t]}</p>
-  <div class="s-opt"><h4>رنگ طلا <span id="pGoldN">${GOLD[pd.gold]}</span></h4><div class="s-chips">${Object.keys(GOLD).map(g=>`<button class="s-sw ${pd.gold===g?'on':''}" data-act="pgold" data-v="${g}" aria-label="طلای ${GOLD[g]}"></button>`).join('')}</div></div>
+  <p class="s-desc">${p.desc||DESC[p.t]}</p>
+  <div class="s-opt"><h4>رنگ طلا <span id="pGoldN">${GOLD[pd.gold]}</span></h4><div class="s-chips">${goldsOf(p).map(g=>`<button class="s-sw ${pd.gold===g?'on':''}" data-act="pgold" data-v="${g}" aria-label="طلای ${GOLD[g]}"></button>`).join('')}</div></div>
   ${opts?`<div class="s-opt"><h4>${OPTN[p.t]}${p.t==='ring'?' <span>راهنمای سایز در پایین صفحه</span>':''}</h4><div class="s-chips">${opts.map(o=>`<button class="s-chip ${pd.opt===o?'on':''}" data-act="popt" data-v="${o}">${o}</button>`).join('')}</div></div>`:''}
   <div class="s-buy"><div class="s-qty"><button data-act="pq" data-v="1" aria-label="افزایش">${ic('plus')}</button><b id="pQ">${toFa(pd.qty)}</b><button data-act="pq" data-v="-1" aria-label="کاهش">${ic('minus')}</button></div>
-  <button class="s-btn" data-act="padd">${ic('bag')} افزودن به سبد</button><button class="s-wbig ${w?'on':''}" data-act="wish" data-id="${id}" aria-pressed="${w}" aria-label="علاقه‌مندی">${ic('heart')}</button></div>
+  <button class="s-btn" data-act="padd" ${oos?'disabled aria-disabled="true" style="opacity:.55;pointer-events:none"':''}>${ic('bag')} ${oos?'ناموجود':'افزودن به سبد'}</button><button class="s-wbig ${w?'on':''}" data-act="wish" data-id="${id}" aria-pressed="${w}" aria-label="علاقه‌مندی">${ic('heart')}</button></div>
   <div class="s-trust"><div>${ic('shield')}ضمانت اصالت</div><div>${ic('truck')}ارسال بیمه‌شده</div><div>${ic('gift')}بسته‌بندی هدیه</div></div>
   <div class="s-acc"><details open><summary>مشخصات</summary><div class="s-accb"><dl class="s-spec"><dt>جنس</dt><dd>طلای ۱۸ عیار (۷۵۰)</dd><dt>نگین</dt><dd>${GEM[p.gem]}${p.t==='ear'?' و مروارید پرورشی':''}</dd><dt>وزن تقریبی</dt><dd>${toFa(p.wt)} گرم</dd><dt>کد محصول</dt><dd>NEY-${toFa(String(p.id).padStart(3,'0'))}</dd></dl></div></details>
   ${p.t==='ring'?`<details><summary>راهنمای سایز</summary><div class="s-accb">نخی را دور انگشت بپیچید و طول آن را بر حسب میلی‌متر اندازه بگیرید؛ این عدد سایز شماست (مثلاً ۵۲ میلی‌متر = سایز ۵۲). اگر بین دو سایز بودید، سایز بزرگ‌تر را انتخاب کنید. تعویض سایز تا ۷ روز رایگان است.</div></details>`:''}
-  <details><summary>ارسال و بازگشت</summary><div class="s-accb">ارسال بیمه‌شده به سراسر کشور در ۲ تا ۴ روز کاری؛ برای سفارش‌های بالای ۵۰ میلیون تومان رایگان است. تا ۷ روز امکان بازگشت یا تعویض وجود دارد.</div></details>
+  <details><summary>ارسال و بازگشت</summary><div class="s-accb">ارسال بیمه‌شده به سراسر کشور در ۲ تا ۴ روز کاری؛ ${FREE>0?`برای سفارش‌های بالای ${mil(FREE)} رایگان است.`:'رایگان است.'} تا ۷ روز امکان بازگشت یا تعویض وجود دارد.</div></details>
   <details><summary>نگهداری</summary><div class="s-accb">پیش از استفاده از عطر و کرم، جواهر را درآورید. با پارچه نرم تمیز کنید و هر قطعه را جداگانه در جعبه NEY نگه دارید.</div></details></div></div></div>
   <section class="s-sec"><div class="s-head"><div><span class="s-eye">پیشنهاد ما</span><h2 class="s-h2">شاید این‌ها را هم دوست داشته باشید</h2></div></div><div class="s-grid">${rel.map(card).join('')}</div></section></div>${footer()}</div>`;
 }
@@ -1584,7 +855,7 @@ function renderWish(){
   sv().innerHTML=`<div class="s-view"><div class="s-wrap"><div class="s-lhead"><span class="s-eye">فهرست شما</span><h1>علاقه‌مندی‌ها</h1></div>
   ${a.length?`<div class="s-grid">${a.map(card).join('')}</div>`:`<div class="s-empty">${ic('heart')}<p>هنوز چیزی به علاقه‌مندی‌ها اضافه نکرده‌اید.</p><a class="s-btn" href="#shop/all">گشتی در فروشگاه</a></div>`}</div><div style="height:72px"></div>${footer()}</div>`;
 }
-function shipCost(m){return m==='courier'?450000:(sub()>=FREE?0:350000);}
+function shipCost(m){return m==='courier'?SH.courier:(sub()>=FREE?0:SH.post);}
 function sumBox(m='post'){
   const s=sub(),sh=shipCost(m);
   return `<div class="s-box"><h3>خلاصه سفارش</h3>${cart.map(c=>{const p=byId(c.id);return `<div class="s-line">${pimg(p,c.gold,'mini',0)}<div class="s-li"><b>${p.name}</b><small>طلای ${GOLD[c.gold]}${c.opt!=='—'?' · '+c.opt:''} · ${toFa(c.qty)} عدد</small></div><span style="font-size:.85rem">${fmt(p.price*c.qty)}</span></div>`;}).join('')}
@@ -1603,9 +874,10 @@ function renderCheckout(){
   <label class="s-radio"><input type="radio" name="ship" value="courier"><span>پیک ویژه NEY<small>تحویل همان روز · فقط تهران</small></span><b style="font-weight:500;font-size:.85rem">${fmt(450000)}</b></label>
   <label class="s-radio"><input type="checkbox" name="gift"><span>بسته‌بندی هدیه<small>جعبه چوبی NEY با کارت دست‌نویس · رایگان</small></span>${ic('gift').replace('<svg','<svg width="22" height="22" style="fill:none;stroke:var(--s-gold);stroke-width:1.5"')}</label></div>
   <div class="s-box"><h3><i>${toFa(3)}</i>روش پرداخت</h3>
-  <label class="s-radio"><input type="radio" name="pay" value="online" checked><span>پرداخت اینترنتی<small>از طریق درگاه امن بانکی</small></span></label>
-  <label class="s-radio"><input type="radio" name="pay" value="card"><span>کارت به کارت<small>شماره کارت پس از ثبت سفارش نمایش داده می‌شود</small></span></label></div></div>
-  <div class="s-sum"><div id="sSum">${sumBox()}</div><button class="s-btn full" type="submit" style="margin-top:16px">ثبت سفارش و پرداخت</button><p class="s-demo">نسخه نمایشی — پرداخت واقعی انجام نمی‌شود.</p></div></form></div>${footer()}</div>`;
+  ${!ND||ND.pay.online?`<label class="s-radio"><input type="radio" name="pay" value="online" checked><span>پرداخت اینترنتی<small>از طریق درگاه امن بانکی</small></span></label>`:''}
+  ${!ND||ND.pay.card?`<label class="s-radio"><input type="radio" name="pay" value="card" ${ND&&!ND.pay.online?'checked':''}><span>کارت به کارت<small>شماره کارت پس از ثبت سفارش نمایش داده می‌شود</small></span></label>`:''}</div></div>
+  <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+  <div class="s-sum"><div id="sSum">${sumBox()}</div><button class="s-btn full" type="submit" style="margin-top:16px">ثبت سفارش و پرداخت</button>${ND?'<p class="s-demo">پرداخت از طریق درگاه امن بانکی انجام می‌شود.</p>':'<p class="s-demo">نسخه نمایشی — پرداخت واقعی انجام نمی‌شود.</p>'}</div></form></div>${footer()}</div>`;
 }
 function renderDone(){
   if(!lastOrder){renderHome();return;}
@@ -1674,11 +946,11 @@ app.addEventListener('click',e=>{
   else if(a==='fgem'){F.gem=F.gem===v?null:v;t.parentNode.querySelectorAll('.s-chip').forEach(b=>b.classList.toggle('on',b.dataset.v===F.gem));renderGrid();}
   else if(a==='reset'){F.gold=F.gem=null;renderList(F.cat);}
   else if(a==='pgold'){pd.gold=v;t.parentNode.querySelectorAll('.s-sw').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
-    const im=document.querySelector('#pImg .s-img');im.className=im.className.replace(/gd-\w/,'gd-'+v);document.getElementById('pGoldN').textContent=GOLD[v];}
+    const pi=document.getElementById('pImg');pi.innerHTML=pimg(byId(pd.id),v,'',0);document.getElementById('pGoldN').textContent=GOLD[v];}
   else if(a==='popt'){pd.opt=v;t.parentNode.querySelectorAll('.s-chip').forEach(b=>b.classList.toggle('on',b===t));}
   else if(a==='pq'){pd.qty=clamp(pd.qty+(+v),1,9);document.getElementById('pQ').textContent=toFa(pd.qty);}
   else if(a==='padd'){addCart(pd.id,pd.gold,pd.opt,pd.qty);burst(t);}
-  else if(a==='spin'){const j=t.querySelector('.s-jw');j.classList.remove('spin');void j.offsetWidth;j.classList.add('spin');burst(j);}
+  else if(a==='spin'){const j=t.querySelector('.s-jw');if(!j) return;j.classList.remove('spin');void j.offsetWidth;j.classList.add('spin');burst(j);}
   else if(a==='spinart'){const hs=t.querySelectorAll('.s-hh svg');const h=hs[Math.floor(Math.random()*hs.length)];h.style.animation='none';void h.offsetWidth;h.style.animation='spinY 1.4s var(--out)';burst(h);}
   else if(a==='cq'){const c=cart.find(x=>x.key===t.dataset.k);if(c){c.qty+= +v;if(c.qty<1) cart=cart.filter(x=>x!==c);else c.qty=Math.min(9,c.qty);}save();counts();renderCart();}
   else if(a==='rm'){cart=cart.filter(x=>x.key!==t.dataset.k);save();counts();renderCart();toast('از سبد خرید حذف شد');}
@@ -1698,6 +970,16 @@ app.addEventListener('submit',e=>{
     const ok=[bad('name',g('name').length>=3),bad('phone',/^09\d{9}$/.test(ph)),bad('city',g('city').length>=2),bad('addr',g('addr').length>=10)].every(Boolean);
     if(!ok){const b=f.querySelector('.s-field.bad input,.s-field.bad textarea');b&&b.focus();toast('لطفاً موارد مشخص‌شده را کامل کنید');return;}
     const ship=f.elements.ship.value;
+    if(ND){
+      const btn=f.querySelector('button[type=submit]');if(btn.disabled) return;btn.disabled=true;const bl=btn.textContent;btn.textContent='در حال ثبت سفارش…';
+      const pay=(f.querySelector('input[name=pay]:checked')||{}).value||'online';
+      fetch(ND.api+'order',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json','X-WP-Nonce':ND.nonce},
+        body:JSON.stringify({items:cart.map(c=>({id:c.id,gold:c.gold,opt:c.opt,qty:c.qty})),name:g('name'),phone:ph,city:g('city'),zip:toEn(g('zip')),addr:g('addr'),ship,pay,gift:!!(f.elements.gift&&f.elements.gift.checked),website:f.elements.website?f.elements.website.value:''})})
+      .then(r=>r.json().then(j=>({ok:r.ok,j})))
+      .then(({ok,j})=>{if(!ok||!j.redirect) throw new Error(j&&j.message||'خطا در ثبت سفارش');cart=[];save();counts();location.href=j.redirect;})
+      .catch(err=>{btn.disabled=false;btn.textContent=bl;toast(err.message||'ارتباط با سرور برقرار نشد؛ دوباره تلاش کنید');});
+      return;
+    }
     lastOrder={name:g('name'),code:'NEY-'+toFa(Math.floor(10000+Math.random()*89999)),total:sub()+shipCost(ship),ship};
     cart=[];save();counts();location.hash='#done';
   }
@@ -1708,12 +990,13 @@ function closeApp(){appOpen=false;app.classList.remove('open');closeCart();close
 function route(){
   const h=decodeURIComponent(location.hash.slice(1)),[a,b]=h.split('/');
   if(!h||h==='home'){closeApp();return;}
-  if(!['shop','p','wish','checkout','done',...Object.keys(CAT)].includes(a)) return;
+  if(!['shop','p','wish','checkout','done','cart',...Object.keys(CAT)].includes(a)) return;
   openApp();closeCart();closeSearch();
   let nav='';
   if(a==='shop'&&!b){renderHome();nav='shop';document.title='فروشگاه NEY | طلا و جواهر';}
   else if(a==='shop'||CAT[a]){const c=b||a;renderList(c);nav=CAT[c]?c:'all';document.title=(CAT[c]||'همه محصولات')+' | NEY';}
   else if(a==='p'){renderPDP(+b);const p=byId(+b);nav=p?p.cat:'';document.title=(p?p.name:'محصول')+' | NEY';}
+  else if(a==='cart'){renderHome();nav='shop';setTimeout(openCart,60);}
   else if(a==='wish'){renderWish();nav='wish';document.title='علاقه‌مندی‌ها | NEY';}
   else if(a==='checkout'){renderCheckout();document.title='تکمیل خرید | NEY';}
   else if(a==='done'){renderDone();document.title='سفارش ثبت شد | NEY';}
@@ -1721,9 +1004,7 @@ function route(){
   app.style.scrollBehavior='auto';app.scrollTop=0;app.style.scrollBehavior='';
 }
 addEventListener('hashchange',route);
+if(ND&&ND.route&&!location.hash) history.replaceState(null,'',location.pathname+location.search+'#'+ND.route);
 route();
 
 })();
-</script>
-</body>
-</html>
