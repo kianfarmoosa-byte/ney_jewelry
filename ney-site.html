@@ -2,7 +2,14 @@
 <html lang="fa">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,interactive-widget=resizes-content">
+<meta name="theme-color" content="#fbf8f2" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#15183a" media="(prefers-color-scheme: dark)">
+<meta name="format-detection" content="telephone=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="NEY">
 <title>NEY | طلا و جواهر</title>
 <meta name="description" content="NEY — طلا و جواهر دست‌ساز؛ انگشتر، گردنبند، دستبند و گوشواره طلا.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -569,6 +576,111 @@ body{
   .s-trust{grid-template-columns:1fr 1fr 1fr}
 }
 @media (prefers-reduced-motion: reduce){.s-hang,.s-art .s-hh,.s-view{animation:none!important}}
+
+/* ================= MOBILE POLISH ================= */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+#app{-webkit-tap-highlight-color:transparent;overscroll-behavior-y:contain}
+#app a,#app button,#app summary,#app label{touch-action:manipulation}
+/* fix: section padding was overriding .s-wrap side gutters */
+.s-wrap.s-hero,.s-wrap.s-sec{padding-inline:clamp(16px,4vw,32px)}
+.s-pdp{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+.s-pdp>*,.s-co>*,.s-hero>*{min-width:0}
+.s-hd{padding-top:env(safe-area-inset-top)}
+.s-search{padding-top:calc(18px + env(safe-area-inset-top))}
+.s-tabs .s-cc{pointer-events:none}
+@media (hover:none){
+  .s-card:hover .s-quick{opacity:0}
+  .s-btn:active,.s-chip:active,.s-ic:active,.s-cat:active .s-img,.s-card>a:active .s-img{transform:scale(.97)}
+  .s-btn,.s-chip,.s-ic,.s-img{transition:transform 180ms var(--out),background-color 250ms var(--ease)}
+}
+@media (max-width:760px){
+  body{font-size:15px}
+  .s-hd-in{height:56px}
+  .s-logo b{font-size:1.45rem}
+  .s-acts{gap:0;margin-inline-end:-6px}
+  .s-ic{width:44px;height:44px}
+  /* hero */
+  .s-hero{gap:22px;padding-top:14px;padding-bottom:8px}
+  .s-art{aspect-ratio:1.15;border-radius:22px}
+  .s-art-tag{bottom:14px;right:14px;padding:10px 14px}
+  .s-hero h1{font-size:clamp(1.9rem,8.4vw,2.4rem);margin:6px 0 10px}
+  .s-hero p{font-size:.95rem}
+  .s-hero .s-row{margin-top:22px;gap:10px;flex-wrap:nowrap}
+  .s-hero .s-row .s-btn{flex:1;padding:0 14px;white-space:nowrap;font-size:.88rem}
+  .s-stats{justify-content:space-between;gap:8px;margin-top:24px;padding-top:18px;border-top:1px solid var(--s-line)}
+  .s-stats>div{text-align:center;flex:1}
+  .s-stats b{font-size:1.1rem}
+  /* sections */
+  .s-sec{padding-block:44px}
+  .s-head{margin-bottom:18px;align-items:center}
+  .s-h2{font-size:1.35rem}
+  /* horizontal, swipeable chip rows */
+  .s-lhead{padding:22px 0 10px}
+  .s-chips[role=tablist],.s-bar .s-g:not(:last-child),.s-opt .s-chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
+    scroll-snap-type:x proximity;margin-inline:-16px;padding:2px 16px 4px;scroll-padding-inline:16px}
+  .s-chips[role=tablist]::-webkit-scrollbar,.s-bar .s-g::-webkit-scrollbar,.s-opt .s-chips::-webkit-scrollbar{display:none}
+  .s-chips>*,.s-bar .s-g>*{flex:0 0 auto;scroll-snap-align:start}
+  .s-chip{height:40px}
+  .s-sw{width:34px;height:34px}
+  .s-bar{display:block;padding:14px 0 20px;margin-top:14px}
+  .s-bar .s-fl{display:flex;flex-direction:column;align-items:stretch;gap:12px}
+  .s-bar .s-g>span:first-child{min-width:52px}
+  .s-bar .s-g:last-child{justify-content:space-between}
+  .s-grid{gap:22px 12px}
+  .s-card-b{padding-top:10px}
+  .s-card-b h3{font-size:.9rem}
+  .s-card-b p{font-size:.74rem}
+  .s-badge{top:10px;right:10px}
+  .s-wish{width:40px;height:40px;top:6px;left:6px}
+  /* product page */
+  .s-crumb{padding:14px 0;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+  .s-pdp,.s-co{grid-template-columns:minmax(0,1fr)}
+  .s-pdp{gap:20px}
+  .s-pdp-img{margin-inline:-16px}
+  .s-pdp-img .s-img{border-radius:0}
+  .s-info h1{font-size:1.5rem}
+  .s-info .s-price{font-size:1.3rem;margin:12px 0 4px}
+  .s-buy{position:sticky;z-index:5;bottom:calc(72px + env(safe-area-inset-bottom));margin-inline:-8px;padding:8px;border-radius:999px;
+    background:color-mix(in srgb,var(--s-surf) 94%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    box-shadow:0 10px 30px -12px rgba(70,48,20,.35),0 0 0 1px var(--s-line)}
+  .s-buy .s-btn{padding:0 16px}
+  .s-trust{gap:8px}
+  .s-trust div{padding:10px;font-size:.7rem;align-items:center;text-align:center}
+  .s-acc summary{padding:18px 0}
+  /* story / features / footer */
+  .s-story{border-radius:22px;padding:28px 20px;gap:24px}
+  .s-feats{gap:10px}
+  .s-feat{display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:center;padding:16px}
+  .s-feat svg{grid-row:span 2;margin:0}
+  .s-news .s-btn{width:100%}
+  .s-ft{padding:36px 0 24px}
+  .s-ft-b{flex-direction:column;margin-top:28px}
+  /* checkout */
+  .s-co{gap:8px;padding-bottom:32px}
+  .s-box{border-radius:18px;padding:18px 16px}
+  .s-radio{padding:14px}
+  .s-sum .s-btn.full{position:sticky;bottom:calc(72px + env(safe-area-inset-bottom))}
+  /* bottom bar + drawer + toast */
+  .s-tabs{height:calc(62px + env(safe-area-inset-bottom))}
+  .s-tabs a,.s-tabs button{font-size:.66rem;gap:3px}
+  .s-tabs>.on::before{content:"";position:absolute;top:0;left:50%;width:22px;height:3px;border-radius:0 0 3px 3px;background:var(--s-gold);transform:translateX(-50%)}
+  .s-tabs>.on svg{stroke:var(--s-gold)}
+  .s-toast{bottom:calc(80px + env(safe-area-inset-bottom));width:max-content;max-width:calc(100% - 32px);white-space:normal;text-align:center}
+  .s-drawer{max-height:86dvh;padding-top:10px;touch-action:pan-y}
+  .s-drawer::before{content:"";position:absolute;top:8px;left:50%;width:40px;height:4px;border-radius:2px;background:var(--s-line);transform:translateX(-50%)}
+  .s-db{overscroll-behavior:contain}
+  .s-sres{grid-template-columns:1fr;max-height:calc(100dvh - 140px)}
+  .s-sbox input{font-size:1rem}
+}
+@media (max-width:360px){
+  .s-hero .s-row{flex-wrap:wrap}
+  .s-hero .s-row .s-btn{flex:1 1 100%}
+  .s-grid{gap:18px 10px}
+  .s-trust{grid-template-columns:1fr}
+  .s-trust div{flex-direction:row;justify-content:flex-start;text-align:start}
+  .s-buy .s-qty button{width:32px}
+}
+@media (max-width:760px) and (prefers-reduced-motion:reduce){.s-btn,.s-chip,.s-ic,.s-img{transition:none}}
 </style>
 </head>
 <body>
@@ -958,6 +1070,7 @@ function setNight(on){
   night=on;root.classList.toggle('night',on);
   toggle.setAttribute('aria-pressed',String(on));
   if(!on) ffUntil=performance.now()+3200;
+  document.querySelectorAll('meta[name=theme-color]').forEach(m=>{m.removeAttribute('media');m.content=on?'#15183a':'#fbf8f2';});
 }
 toggle.addEventListener('click',()=>setNight(!night));
 stage.addEventListener('click',e=>{if(e.target.closest('[data-toggle]')) setNight(!night);});
@@ -1308,7 +1421,7 @@ build();
 requestAnimationFrame(frame);
 setTimeout(()=>root.classList.add('settled'),2600);
 if(document.fonts) document.fonts.ready.then(()=>tags.forEach(clipTag));
-let rt;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(build,140);});
+let rt,lw=innerWidth,lh=innerHeight;addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{if(coarse&&innerWidth===lw&&Math.abs(innerHeight-lh)<160) return;lw=innerWidth;lh=innerHeight;build();},140);});
 /* ================= NEY STORE ================= */
 let appOpen=false;
 const app=document.getElementById('app');
@@ -1480,7 +1593,7 @@ function sumBox(m='post'){
 }
 function renderCheckout(){
   if(!cart.length){sv().innerHTML=`<div class="s-view"><div class="s-wrap"><div class="s-empty">${ic('bag')}<p>سبد خرید شما خالی است.</p><a class="s-btn" href="#shop/all">مشاهده محصولات</a></div></div>${footer()}</div>`;return;}
-  const fld=(n,l,t='text',w='',ph='',err='')=>`<label class="s-field ${w}"><span>${l}</span>${t==='area'?`<textarea name="${n}" placeholder="${ph}"></textarea>`:`<input name="${n}" type="${t}" placeholder="${ph}" ${t==='tel'?'inputmode="numeric" dir="ltr" style="text-align:right"':''}>`}<em>${err}</em></label>`;
+  const fld=(n,l,t='text',w='',ph='',err='')=>`<label class="s-field ${w}"><span>${l}</span>${t==='area'?`<textarea name="${n}" placeholder="${ph}" autocomplete="street-address"></textarea>`:`<input name="${n}" type="${t}" placeholder="${ph}" ${({name:'autocomplete="name" enterkeyhint="next"',phone:'autocomplete="tel" enterkeyhint="next"',city:'autocomplete="address-level1" enterkeyhint="next"',zip:'autocomplete="postal-code" enterkeyhint="next"'})[n]||''} ${t==='tel'?'inputmode="numeric" dir="ltr" style="text-align:right"':''}>`}<em>${err}</em></label>`;
   sv().innerHTML=`<div class="s-view"><div class="s-wrap"><h1 class="s-co-h" style="font-size:clamp(1.5rem,1.1rem + 1.6vw,2.2rem);font-weight:500;padding:28px 0 0">تکمیل خرید</h1>
   <form class="s-co" data-form="co" novalidate><div>
   <div class="s-box"><h3><i>${toFa(1)}</i>اطلاعات گیرنده</h3><div class="s-fg">${fld('name','نام و نام خانوادگی','text','','','نام را کامل وارد کنید')}${fld('phone','شماره موبایل','tel','','۰۹۱۲۳۴۵۶۷۸۹','شماره موبایل معتبر نیست')}
@@ -1539,6 +1652,11 @@ app.innerHTML=`<header class="s-hd"><div class="s-wrap s-hd-in"><a class="s-logo
  <div class="s-search" id="sSr"><div class="s-wrap"><div class="s-sbox">${ic('search')}<input type="search" placeholder="جستجو در NEY؛ مثلاً «زمرد» یا «انگشتر»" aria-label="جستجو"><button class="s-ic" data-act="closesearch" aria-label="بستن">${ic('x')}</button></div><div class="s-sres" id="sSres"></div></div></div>
  <div class="s-toast" id="sToast" role="status" aria-live="polite"></div>`;
 themeIc();counts();
+/* mobile: swipe the cart sheet down to close */
+(()=>{const d=document.getElementById('sDr');let y0=null,dy=0;
+  d.addEventListener('touchstart',e=>{if(innerWidth>760) return;const b=document.getElementById('sDb');if(e.target.closest('.s-db')&&b.scrollTop>0) return;y0=e.touches[0].clientY;dy=0;d.style.transition='none';},{passive:true});
+  d.addEventListener('touchmove',e=>{if(y0===null) return;dy=Math.max(0,e.touches[0].clientY-y0);d.style.transform=dy?`translateY(${dy}px)`:'';},{passive:true});
+  d.addEventListener('touchend',()=>{if(y0===null) return;d.style.transition='';d.style.transform='';if(dy>90) closeCart();y0=null;});})();
 
 app.addEventListener('click',e=>{
   const t=e.target.closest('[data-act]');if(!t) return;
@@ -1599,7 +1717,7 @@ function route(){
   else if(a==='wish'){renderWish();nav='wish';document.title='علاقه‌مندی‌ها | NEY';}
   else if(a==='checkout'){renderCheckout();document.title='تکمیل خرید | NEY';}
   else if(a==='done'){renderDone();document.title='سفارش ثبت شد | NEY';}
-  app.querySelectorAll('[data-nav]').forEach(x=>x.classList.toggle('on',x.dataset.nav===nav||(nav&&CAT[nav]&&x.dataset.nav==='all'&&x.closest('.s-tabs'))));
+  app.querySelectorAll('[data-nav]').forEach(x=>x.classList.toggle('on',!!(x.dataset.nav===nav||(nav&&CAT[nav]&&x.dataset.nav==='all'&&x.closest('.s-tabs')))));
   app.style.scrollBehavior='auto';app.scrollTop=0;app.style.scrollBehavior='';
 }
 addEventListener('hashchange',route);
